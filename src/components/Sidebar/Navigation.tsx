@@ -9,14 +9,11 @@ import {
   AppDissectionIcon,
   BookmarksIcon,
   ExternalLinkIcon,
-  FigmaIcon,
   GitHubIcon,
-  HackerNewsIcon,
   HomeIcon,
   PodcastIcon,
   SecurityChecklistIcon,
   StackIcon,
-  StaffDesignIcon,
   TwitterIcon,
   WritingIcon,
 } from '~/components/Icon'
@@ -74,18 +71,6 @@ export function SidebarNavigation() {
     },
 
     {
-      href: '/ama',
-      label: 'AMA',
-      icon: AMAIcon,
-      trailingAccessory: null,
-      isActive:
-        router.asPath.indexOf('/ama') >= 0 &&
-        !router.asPath.startsWith('/ama/pending'),
-      trailingAction: null,
-      isExternal: false,
-    },
-
-    {
       href: '/stack',
       label: 'Stack',
       icon: StackIcon,
@@ -108,26 +93,6 @@ export function SidebarNavigation() {
     },
 
     {
-      href: 'https://staff.design',
-      label: 'Staff Design',
-      icon: StaffDesignIcon,
-      trailingAccessory: ExternalLinkIcon,
-      isActive: false,
-      trailingAction: null,
-      isExternal: true,
-    },
-
-    {
-      href: 'https://figma.com/@brian',
-      label: 'Figma Plugins',
-      icon: FigmaIcon,
-      trailingAccessory: ExternalLinkIcon,
-      isActive: false,
-      trailingAction: null,
-      isExternal: true,
-    },
-
-    {
       href: '/security',
       label: 'Security Checklist',
       icon: SecurityChecklistIcon,
@@ -138,21 +103,11 @@ export function SidebarNavigation() {
     },
 
     {
-      href: '/hn',
-      label: 'Hacker News',
-      icon: HackerNewsIcon,
-      trailingAccessory: null,
-      isActive: router.asPath.indexOf('/hn') >= 0,
-      trailingAction: null,
-      isExternal: false,
-    },
-
-    {
-      href: '/app-dissection',
-      label: 'App Dissection',
+      href: '/system-design',
+      label: 'System Design',
       icon: AppDissectionIcon,
       trailingAccessory: null,
-      isActive: router.asPath.indexOf('/app-dissection') >= 0,
+      isActive: router.asPath.indexOf('/system-design') >= 0,
       trailingAction: null,
       isExternal: false,
     },
@@ -160,7 +115,7 @@ export function SidebarNavigation() {
     'Online',
 
     {
-      href: 'https://twitter.com/brian_lovin',
+      href: 'https://twitter.com/zonito87',
       label: 'Twitter',
       icon: TwitterIcon,
       trailingAccessory: ExternalLinkIcon,
@@ -170,7 +125,7 @@ export function SidebarNavigation() {
     },
 
     {
-      href: 'https://github.com/brianlovin',
+      href: 'https://github.com/zonito',
       label: 'GitHub',
       icon: GitHubIcon,
       trailingAccessory: ExternalLinkIcon,

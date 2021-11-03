@@ -91,18 +91,14 @@ export default {
             },
           },
         }),
-        // revue.getSubscriber({ email: viewer.email }),
+        revue.getSubscriber({ email: viewer.email }),
       ])
 
       return [
-        // {
-        //   type: EmailSubscriptionType.Newsletter,
-        //   subscribed: !!newsletter,
-        // },
         {
-          type: EmailSubscriptionType.HackerNews,
-          subscribed: !!hn,
-        },
+          type: EmailSubscriptionType.Newsletter,
+          subscribed: !!newsletter,
+        }
       ]
     },
   },

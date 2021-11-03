@@ -1,6 +1,5 @@
 import { getBookmark, getBookmarks } from './bookmarks'
 import { getComment, getComments } from './comment'
-import { getHackerNewsPost, getHackerNewsPosts } from './hackerNews'
 import { getPost, getPosts } from './posts'
 import { getQuestion, getQuestions } from './questions'
 import { getRepos } from './repos'
@@ -23,7 +22,5 @@ export default {
   comments: getComments,
   stacks: getStacks,
   stack: getStack,
-  tags: getTags,
-  hackerNewsPosts: getHackerNewsPosts,
-  hackerNewsPost: getHackerNewsPost,
+  tags: getTags
 }

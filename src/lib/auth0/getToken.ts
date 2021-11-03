@@ -1,8 +1,8 @@
 import { BASE_URL } from '.'
 
 export async function getToken() {
-  const client_id = process.env.AUTH0_MANAGEMENT_CLIENT_ID
-  const client_secret = process.env.AUTH0_MANAGEMENT_CLIENT_SECRET
+  const client_id = process.env.AUTH0_CLIENT_ID
+  const client_secret = process.env.AUTH0_CLIENT_SECRET
   const url = `${BASE_URL}/oauth/token`
   const options = {
     method: 'POST',
