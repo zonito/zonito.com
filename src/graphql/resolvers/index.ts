@@ -73,7 +73,7 @@ export default {
     pendingEmail: ({ id }, _, { viewer }: Context) => {
       return viewer && viewer.id === id ? viewer.pendingEmail : null
     },
-    emailSubscriptions: async ({ id }, _, { viewer, prisma }: Context) => {
+    emailSubscriptions: async ({ id }, _, { viewer }: Context) => {
       if (!viewer || !viewer.email || viewer.id !== id)
         return [
           {

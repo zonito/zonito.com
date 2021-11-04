@@ -58,20 +58,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       error('Email is no longer pending, this link may be expired')
     }
 
-    if (user.email) {
-      // if the user already had an existing email address, they are updating it
-      // so make sure any of their existing email subscriptions reflect the
-      // new address
-      await prisma.emailSubscription.updateMany({
-        where: {
-          email: user.email,
-        },
-        data: {
-          email: pendingEmail,
-        },
-      })
-    }
-
     await prisma.user.update({
       where: {
         id: user.id,

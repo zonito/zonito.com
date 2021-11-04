@@ -5,13 +5,10 @@ import { Plus } from 'react-feather'
 import { AddBookmarkDialog } from '~/components/Bookmarks/AddBookmarkDialog'
 import { GhostButton } from '~/components/Button'
 import {
-  AMAIcon,
-  AppDissectionIcon,
   BookmarksIcon,
   ExternalLinkIcon,
   GitHubIcon,
   HomeIcon,
-  PodcastIcon,
   SecurityChecklistIcon,
   StackIcon,
   TwitterIcon,
@@ -83,16 +80,6 @@ export function SidebarNavigation() {
     'Projects',
 
     {
-      href: 'https://designdetails.fm',
-      label: 'Design Details',
-      icon: PodcastIcon,
-      trailingAccessory: ExternalLinkIcon,
-      isActive: false,
-      trailingAction: null,
-      isExternal: true,
-    },
-
-    {
       href: '/security',
       label: 'Security Checklist',
       icon: SecurityChecklistIcon,
@@ -105,7 +92,7 @@ export function SidebarNavigation() {
     {
       href: '/system-design',
       label: 'System Design',
-      icon: AppDissectionIcon,
+      icon: StackIcon,
       trailingAccessory: null,
       isActive: router.asPath.indexOf('/system-design') >= 0,
       trailingAction: null,
