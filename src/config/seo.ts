@@ -1,5 +1,4 @@
-export const baseUrl =
-  process.env.NODE_ENV === 'production' ? 'https://zonito.com' : ''
+export const baseUrl = process.env.BASE_URL;
 export const baseEmail = 'hello@zonito.com'
 
 export const defaultSEO = {
