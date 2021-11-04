@@ -1,26 +1,26 @@
 export const baseUrl =
-  process.env.NODE_ENV === 'production' ? 'https://brianlovin.com' : ''
-export const baseEmail = 'hi@brianlovin.com'
+  process.env.NODE_ENV === 'production' ? 'https://zonito.com' : ''
+export const baseEmail = 'hello@zonito.com'
 
 export const defaultSEO = {
-  title: 'Brian Lovin',
+  title: 'Zonito | Love Sharma',
   description:
     'Product designer, podcaster, and writer, living in San Francisco.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    site_name: 'Brian Lovin',
+    site_name: 'Zonito | Love Sharma',
     images: [
       {
         url: `${baseUrl}/static/og/default.png`,
-        alt: 'Brian Lovin',
+        alt: 'Zonito | Love Sharma',
       },
     ],
   },
   twitter: {
-    handle: '@brian_lovin',
-    site: '@brian_lovin',
+    handle: '@zonito87',
+    site: '@zonito',
     cardType: 'summary_large_image',
   },
 }

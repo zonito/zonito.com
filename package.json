@@ -1,5 +1,5 @@
 {
-  "name": "brios",
+  "name": "zonito",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -11,7 +11,7 @@
     "generate": "graphql-codegen",
     "generate:watch": "graphql-codegen --watch 'src/graphql/**/*.ts'",
     "postinstall": "yarn generate && prisma generate",
-    "db:dev": "pscale connect brianlovin dev --port 3309"
+    "db:dev": "pscale connect zonitodb dev --port 3309"
   },
   "husky": {
     "hooks": {
