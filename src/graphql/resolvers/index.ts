@@ -77,20 +77,12 @@ export default {
       if (!viewer || !viewer.email || viewer.id !== id)
         return [
           {
-            type: EmailSubscriptionType.HackerNews,
+            type: EmailSubscriptionType.Newsletter,
             subscribed: false,
           },
         ]
 
-      const [hn, newsletter] = await Promise.all([
-        prisma.emailSubscription.findUnique({
-          where: {
-            emailAndType: {
-              email: viewer.email,
-              type: EmailSubscriptionType.HackerNews,
-            },
-          },
-        }),
+      const [newsletter] = await Promise.all([
         revue.getSubscriber({ email: viewer.email }),
       ])
 

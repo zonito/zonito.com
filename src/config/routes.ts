@@ -24,16 +24,6 @@ const routes = {
       url: 'writing',
     }),
   },
-  hn: {
-    label: 'HN',
-    path: '/hn',
-    seo: extendSEO({
-      title: 'HN',
-      description: 'A better Hacker News.',
-      image: 'og/hn.png',
-      url: 'hn',
-    }),
-  },
   bookmarks: {
     label: 'Bookmarks',
     path: '/bookmarks',
@@ -42,26 +32,6 @@ const routes = {
       description: 'Internet things, saved for later.',
       image: 'og/bookmarks.png',
       url: 'bookmarks',
-    }),
-  },
-  appDissection: {
-    label: 'App Dissection',
-    path: '/app-dissection',
-    seo: extendSEO({
-      title: 'App Dissection',
-      description: 'In-depth design explorations.',
-      image: 'og/app-dissection.png',
-      url: 'app-dissection',
-    }),
-  },
-  ama: {
-    label: 'AMA',
-    path: '/ama',
-    seo: extendSEO({
-      title: 'AMA',
-      description: 'Ask me anything.',
-      image: 'og/ama.png',
-      url: 'ama',
     }),
   },
   security: {

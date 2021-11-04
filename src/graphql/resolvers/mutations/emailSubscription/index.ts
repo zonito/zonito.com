@@ -26,43 +26,13 @@ export async function editEmailSubscription(
   }
 
   const emailToUse = viewer && viewer.email ? viewer.email : email
-  if (type === EmailSubscriptionType.HackerNews) {
+  if (type === EmailSubscriptionType.Newsletter) {
     if (subscribed) {
-      try {
-        await prisma.emailSubscription.create({
-          data: {
-            email: emailToUse,
-            type: EmailSubscriptionType.HackerNews,
-          },
-        })
-      } catch (err) {
-        console.error({ err })
-        // nothing to do here
-      }
+      revue.addSubscriber({ email: emailToUse, doubleOptIn: !viewer })
     } else {
-      try {
-        await prisma.emailSubscription.delete({
-          where: {
-            emailAndType: {
-              email: emailToUse,
-              type: EmailSubscriptionType.HackerNews,
-            },
-          },
-        })
-      } catch (err) {
-        console.error({ err })
-        // nothing to do here
-      }
+      revue.removeSubscriber({ email: emailToUse, doubleOptIn: !viewer })
     }
   }
-
-  // if (type === EmailSubscriptionType.Newsletter) {
-  //   if (subscribed) {
-  //     revue.addSubscriber({ email: emailToUse, doubleOptIn: !viewer })
-  //   } else {
-  //     revue.removeSubscriber({ email: emailToUse, doubleOptIn: !viewer })
-  //   }
-  // }
 
   return viewer
     ? await prisma.user.findUnique({ where: { id: viewer.id } })

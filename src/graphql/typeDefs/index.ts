@@ -77,7 +77,6 @@ export default gql`
   }
 
   enum EmailSubscriptionType {
-    HACKER_NEWS
     NEWSLETTER
   }
 
@@ -107,29 +106,6 @@ export default gql`
     author: User!
     viewerCanEdit: Boolean
     viewerCanDelete: Boolean
-  }
-
-  type HackerNewsComment {
-    id: String
-    user: String
-    comments_count: String
-    comments: [HackerNewsComment]
-    time_ago: String
-    level: Int
-    content: String
-  }
-
-  type HackerNewsPost {
-    id: String
-    title: String
-    user: String
-    time: Int
-    time_ago: String
-    comments: [HackerNewsComment]
-    comments_count: String
-    url: String
-    domain: String
-    content: String
   }
 
   input BookmarkFilter {
@@ -203,8 +179,6 @@ export default gql`
       after: String
       filter: QuestionFilter
     ): QuestionsConnection!
-    hackerNewsPosts: [HackerNewsPost]!
-    hackerNewsPost(id: ID!): HackerNewsPost
     repos: [Repo]!
     signedUploadUrl(id: ID!): String
     signedPlaybackUrl(id: ID!): String

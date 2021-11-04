@@ -143,33 +143,7 @@ export type EmailSubscriptionInput = {
 }
 
 export enum EmailSubscriptionType {
-  HackerNews = 'HACKER_NEWS',
   Newsletter = 'NEWSLETTER',
-}
-
-export type HackerNewsComment = {
-  __typename?: 'HackerNewsComment'
-  comments?: Maybe<Array<Maybe<HackerNewsComment>>>
-  comments_count?: Maybe<Scalars['String']>
-  content?: Maybe<Scalars['String']>
-  id?: Maybe<Scalars['String']>
-  level?: Maybe<Scalars['Int']>
-  time_ago?: Maybe<Scalars['String']>
-  user?: Maybe<Scalars['String']>
-}
-
-export type HackerNewsPost = {
-  __typename?: 'HackerNewsPost'
-  comments?: Maybe<Array<Maybe<HackerNewsComment>>>
-  comments_count?: Maybe<Scalars['String']>
-  content?: Maybe<Scalars['String']>
-  domain?: Maybe<Scalars['String']>
-  id?: Maybe<Scalars['String']>
-  time?: Maybe<Scalars['Int']>
-  time_ago?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  url?: Maybe<Scalars['String']>
-  user?: Maybe<Scalars['String']>
 }
 
 export type Mutation = {
@@ -301,8 +275,6 @@ export type Query = {
   bookmarks: BookmarksConnection
   comment?: Maybe<Comment>
   comments: Array<Maybe<Comment>>
-  hackerNewsPost?: Maybe<HackerNewsPost>
-  hackerNewsPosts: Array<Maybe<HackerNewsPost>>
   post?: Maybe<Post>
   posts: Array<Maybe<Post>>
   question?: Maybe<Question>
@@ -335,10 +307,6 @@ export type QueryCommentArgs = {
 export type QueryCommentsArgs = {
   refId?: Maybe<Scalars['String']>
   type?: Maybe<CommentType>
-}
-
-export type QueryHackerNewsPostArgs = {
-  id: Scalars['ID']
 }
 
 export type QueryPostArgs = {
@@ -553,104 +521,6 @@ export type CommentInfoFragment = {
     role?: UserRole | null | undefined
     isViewer?: boolean | null | undefined
   }
-}
-
-export type HackerNewsListItemInfoFragment = {
-  __typename?: 'HackerNewsPost'
-  id?: string | null | undefined
-  title?: string | null | undefined
-  domain?: string | null | undefined
-  url?: string | null | undefined
-}
-
-export type HackerNewsCommentInfoFragment = {
-  __typename?: 'HackerNewsComment'
-  id?: string | null | undefined
-  user?: string | null | undefined
-  comments_count?: string | null | undefined
-  time_ago?: string | null | undefined
-  level?: number | null | undefined
-  content?: string | null | undefined
-}
-
-export type HackerNewsPostInfoFragment = {
-  __typename?: 'HackerNewsPost'
-  user?: string | null | undefined
-  time?: number | null | undefined
-  time_ago?: string | null | undefined
-  comments_count?: string | null | undefined
-  url?: string | null | undefined
-  domain?: string | null | undefined
-  content?: string | null | undefined
-  id?: string | null | undefined
-  title?: string | null | undefined
-  comments?:
-    | Array<
-        | {
-            __typename?: 'HackerNewsComment'
-            id?: string | null | undefined
-            user?: string | null | undefined
-            comments_count?: string | null | undefined
-            time_ago?: string | null | undefined
-            level?: number | null | undefined
-            content?: string | null | undefined
-            comments?:
-              | Array<
-                  | {
-                      __typename?: 'HackerNewsComment'
-                      id?: string | null | undefined
-                      user?: string | null | undefined
-                      comments_count?: string | null | undefined
-                      time_ago?: string | null | undefined
-                      level?: number | null | undefined
-                      content?: string | null | undefined
-                      comments?:
-                        | Array<
-                            | {
-                                __typename?: 'HackerNewsComment'
-                                id?: string | null | undefined
-                                user?: string | null | undefined
-                                comments_count?: string | null | undefined
-                                time_ago?: string | null | undefined
-                                level?: number | null | undefined
-                                content?: string | null | undefined
-                                comments?:
-                                  | Array<
-                                      | {
-                                          __typename?: 'HackerNewsComment'
-                                          id?: string | null | undefined
-                                          user?: string | null | undefined
-                                          comments_count?:
-                                            | string
-                                            | null
-                                            | undefined
-                                          time_ago?: string | null | undefined
-                                          level?: number | null | undefined
-                                          content?: string | null | undefined
-                                        }
-                                      | null
-                                      | undefined
-                                    >
-                                  | null
-                                  | undefined
-                              }
-                            | null
-                            | undefined
-                          >
-                        | null
-                        | undefined
-                    }
-                  | null
-                  | undefined
-                >
-              | null
-              | undefined
-          }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
 }
 
 export type PostInfoFragment = {
@@ -1345,122 +1215,6 @@ export type GetCommentsQuery = {
   >
 }
 
-export type GetHackerNewsPostsQueryVariables = Exact<{ [key: string]: never }>
-
-export type GetHackerNewsPostsQuery = {
-  __typename?: 'Query'
-  hackerNewsPosts: Array<
-    | {
-        __typename?: 'HackerNewsPost'
-        id?: string | null | undefined
-        title?: string | null | undefined
-        domain?: string | null | undefined
-        url?: string | null | undefined
-      }
-    | null
-    | undefined
-  >
-}
-
-export type GetHackerNewsPostQueryVariables = Exact<{
-  id: Scalars['ID']
-}>
-
-export type GetHackerNewsPostQuery = {
-  __typename?: 'Query'
-  hackerNewsPost?:
-    | {
-        __typename?: 'HackerNewsPost'
-        user?: string | null | undefined
-        time?: number | null | undefined
-        time_ago?: string | null | undefined
-        comments_count?: string | null | undefined
-        url?: string | null | undefined
-        domain?: string | null | undefined
-        content?: string | null | undefined
-        id?: string | null | undefined
-        title?: string | null | undefined
-        comments?:
-          | Array<
-              | {
-                  __typename?: 'HackerNewsComment'
-                  id?: string | null | undefined
-                  user?: string | null | undefined
-                  comments_count?: string | null | undefined
-                  time_ago?: string | null | undefined
-                  level?: number | null | undefined
-                  content?: string | null | undefined
-                  comments?:
-                    | Array<
-                        | {
-                            __typename?: 'HackerNewsComment'
-                            id?: string | null | undefined
-                            user?: string | null | undefined
-                            comments_count?: string | null | undefined
-                            time_ago?: string | null | undefined
-                            level?: number | null | undefined
-                            content?: string | null | undefined
-                            comments?:
-                              | Array<
-                                  | {
-                                      __typename?: 'HackerNewsComment'
-                                      id?: string | null | undefined
-                                      user?: string | null | undefined
-                                      comments_count?: string | null | undefined
-                                      time_ago?: string | null | undefined
-                                      level?: number | null | undefined
-                                      content?: string | null | undefined
-                                      comments?:
-                                        | Array<
-                                            | {
-                                                __typename?: 'HackerNewsComment'
-                                                id?: string | null | undefined
-                                                user?: string | null | undefined
-                                                comments_count?:
-                                                  | string
-                                                  | null
-                                                  | undefined
-                                                time_ago?:
-                                                  | string
-                                                  | null
-                                                  | undefined
-                                                level?:
-                                                  | number
-                                                  | null
-                                                  | undefined
-                                                content?:
-                                                  | string
-                                                  | null
-                                                  | undefined
-                                              }
-                                            | null
-                                            | undefined
-                                          >
-                                        | null
-                                        | undefined
-                                    }
-                                  | null
-                                  | undefined
-                                >
-                              | null
-                              | undefined
-                          }
-                        | null
-                        | undefined
-                      >
-                    | null
-                    | undefined
-                }
-              | null
-              | undefined
-            >
-          | null
-          | undefined
-      }
-    | null
-    | undefined
-}
-
 export type GetPostsQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetPostsQuery = {
@@ -1836,50 +1590,7 @@ export const CommentInfoFragmentDoc = gql`
   }
   ${UserInfoFragmentDoc}
 `
-export const HackerNewsListItemInfoFragmentDoc = gql`
-  fragment HackerNewsListItemInfo on HackerNewsPost {
-    id
-    title
-    domain
-    url
-  }
-`
-export const HackerNewsCommentInfoFragmentDoc = gql`
-  fragment HackerNewsCommentInfo on HackerNewsComment {
-    id
-    user
-    comments_count
-    time_ago
-    level
-    content
-  }
-`
-export const HackerNewsPostInfoFragmentDoc = gql`
-  fragment HackerNewsPostInfo on HackerNewsPost {
-    ...HackerNewsListItemInfo
-    user
-    time
-    time_ago
-    comments_count
-    url
-    domain
-    content
-    comments {
-      ...HackerNewsCommentInfo
-      comments {
-        ...HackerNewsCommentInfo
-        comments {
-          ...HackerNewsCommentInfo
-          comments {
-            ...HackerNewsCommentInfo
-          }
-        }
-      }
-    }
-  }
-  ${HackerNewsListItemInfoFragmentDoc}
-  ${HackerNewsCommentInfoFragmentDoc}
-`
+
 export const PostInfoFragmentDoc = gql`
   fragment PostInfo on Post {
     id
@@ -3105,131 +2816,6 @@ export type GetCommentsQueryResult = Apollo.QueryResult<
   GetCommentsQuery,
   GetCommentsQueryVariables
 >
-export const GetHackerNewsPostsDocument = gql`
-  query getHackerNewsPosts {
-    hackerNewsPosts {
-      ...HackerNewsListItemInfo
-    }
-  }
-  ${HackerNewsListItemInfoFragmentDoc}
-`
-
-/**
- * __useGetHackerNewsPostsQuery__
- *
- * To run a query within a React component, call `useGetHackerNewsPostsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetHackerNewsPostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetHackerNewsPostsQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetHackerNewsPostsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetHackerNewsPostsQuery,
-    GetHackerNewsPostsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<
-    GetHackerNewsPostsQuery,
-    GetHackerNewsPostsQueryVariables
-  >(GetHackerNewsPostsDocument, options)
-}
-export function useGetHackerNewsPostsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetHackerNewsPostsQuery,
-    GetHackerNewsPostsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<
-    GetHackerNewsPostsQuery,
-    GetHackerNewsPostsQueryVariables
-  >(GetHackerNewsPostsDocument, options)
-}
-export type GetHackerNewsPostsQueryHookResult = ReturnType<
-  typeof useGetHackerNewsPostsQuery
->
-export type GetHackerNewsPostsLazyQueryHookResult = ReturnType<
-  typeof useGetHackerNewsPostsLazyQuery
->
-export type GetHackerNewsPostsQueryResult = Apollo.QueryResult<
-  GetHackerNewsPostsQuery,
-  GetHackerNewsPostsQueryVariables
->
-export const GetHackerNewsPostDocument = gql`
-  query getHackerNewsPost($id: ID!) {
-    hackerNewsPost(id: $id) {
-      ...HackerNewsPostInfo
-    }
-  }
-  ${HackerNewsPostInfoFragmentDoc}
-`
-
-/**
- * __useGetHackerNewsPostQuery__
- *
- * To run a query within a React component, call `useGetHackerNewsPostQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetHackerNewsPostQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetHackerNewsPostQuery({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useGetHackerNewsPostQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetHackerNewsPostQuery,
-    GetHackerNewsPostQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<
-    GetHackerNewsPostQuery,
-    GetHackerNewsPostQueryVariables
-  >(GetHackerNewsPostDocument, options)
-}
-export function useGetHackerNewsPostLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetHackerNewsPostQuery,
-    GetHackerNewsPostQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<
-    GetHackerNewsPostQuery,
-    GetHackerNewsPostQueryVariables
-  >(GetHackerNewsPostDocument, options)
-}
-export type GetHackerNewsPostQueryHookResult = ReturnType<
-  typeof useGetHackerNewsPostQuery
->
-export type GetHackerNewsPostLazyQueryHookResult = ReturnType<
-  typeof useGetHackerNewsPostLazyQuery
->
-export type GetHackerNewsPostQueryResult = Apollo.QueryResult<
-  GetHackerNewsPostQuery,
-  GetHackerNewsPostQueryVariables
->
-export const GetPostsDocument = gql`
-  query getPosts {
-    posts {
-      ...PostInfo
-    }
-  }
-  ${PostInfoFragmentDoc}
-`
 
 /**
  * __useGetPostsQuery__
