@@ -70,18 +70,6 @@ const workHistory = [
     subtitle: 'Co-founder',
     date: '2017—18',
   },
-  {
-    href: 'https://facebook.com',
-    title: 'Facebook',
-    subtitle: 'Product Designer',
-    date: '2015—17',
-  },
-  {
-    href: 'https://buffer.com',
-    title: 'Buffer',
-    subtitle: 'Product Designer',
-    date: '2013—15',
-  },
 ]
 
 const speakingData = [
@@ -89,46 +77,6 @@ const speakingData = [
     href: 'https://progressionapp.com/blog/podcast-26-brian-lovin-github-spectrum-design-details-on-the-rise-of-the-senior-ic/',
     title: 'Progression Podcast',
     date: "Jun '21",
-  },
-  {
-    href: 'https://layout.fm/episodes/194/',
-    title: 'Layout.fm',
-    date: "Jan '21",
-  },
-  {
-    href: "https://softwareengineeringdaily.com/'20/07/15/github-mobile-with-brian-lovin-and-ryan-nystrom/",
-    title: 'Software Engineering Daily',
-    date: "Jul '20",
-  },
-  {
-    href: 'https://avocode.com/blog/brian-lovin-product-designer-github-interview',
-    title: 'The Grit',
-    date: "Jul '20",
-  },
-  {
-    href: 'https://www.swiftbysundell.com/podcast/67/',
-    title: 'Swift by Sundell',
-    date: "Feb '20",
-  },
-  {
-    href: 'https://www.youtube.com/watch?v=SyS3h3kmBnY',
-    title: 'Figma Config',
-    date: "Feb '20",
-  },
-  {
-    href: 'https://www.loversmagazine.com/interviews/brian-lovin',
-    title: 'Lovers Magazine',
-    date: "Jan '18",
-  },
-  {
-    href: 'https://www.youtube.com/watch?v=6MBBTdu8v6E',
-    title: 'GraphQL Summit',
-    date: "Nov '17",
-  },
-  {
-    href: 'https://designdetails.fm/episodes/3e342ac0',
-    title: 'Design Details',
-    date: "Aug '17",
   },
 ]
 
@@ -155,73 +103,14 @@ export function Intro() {
             <SectionContent>
               <div className="prose text-primary">
                 <p>
-                  Hey, I&apos;m Brian. I&apos;m a designer,{' '}
-                  <a href="https://designdetails.fm">podcaster</a>,{' '}
+                  Hey, I&apos;m Love Sharma. I&apos;m a developer,{' '}
                   <Link href="/writing" passHref>
                     <a>writer</a>
                   </Link>
                   , and{' '}
-                  <a href="https://github.com/brianlovin">software tinkerer</a>.
-                  I&apos;m currently building{' '}
-                  <a href="https://github.com/mobile">
-                    native mobile apps at GitHub
-                  </a>
-                  .
-                </p>
-                <p>
-                  Before GitHub, I co-founded{' '}
-                  <a href="https://spectrum.chat">Spectrum</a>, a platform for
-                  large-scale communities to have better public conversations.
-                  Spectrum was acquired by GitHub in November, 2018.
-                </p>
-                <p>
-                  Before Spectrum I designed payments experiences at Facebook,
-                  working across Facebook, Messenger, WhatsApp, and Instagram. I
-                  originally cut my teeth as the first product designer at{' '}
-                  <a href="https://buffer.com">Buffer</a>.
-                </p>
-                <p>
-                  I also co-host the{' '}
-                  <a href="https://designdetails.fm">Design Details Podcast</a>,
-                  a weekly conversation about design process and culture. Design
-                  Details is part of <a href="https://spec.fm">Spec.fm</a>, a
-                  podcast network for designers and developers, which I
-                  co-founded in 2015.
-                </p>
-                <p>
-                  You can find me on{' '}
-                  <a href="https://twitter.com/brian_lovin">Twitter</a> where I
-                  talk about design and development, or on{' '}
-                  <a href="https://github.com/brianlovin">GitHub</a> where I’m
-                  building in the open, or on{' '}
-                  <a href="https://figma.com/@brian">Figma</a> where I’m
-                  exploring how plugins can automate the tedious parts of
-                  interface design.
+                  <a href="https://github.com/zonito">software tinkerer</a>.
                 </p>
               </div>
-              <div className="flex pt-6">
-                <Button href="https://changelog.brianlovin.com">
-                  View changelog
-                </Button>
-              </div>
-            </SectionContent>
-          </SectionContainer>
-
-          <SectionContainer>
-            <SectionTitle>Where</SectionTitle>
-            <SectionContent>
-              <Image
-                src="/static/img/sf.png"
-                width={800}
-                height={400}
-                layout="responsive"
-                className="rounded-2xl"
-                quality={100}
-              />
-              <p className="flex items-center justify-end pt-2 space-x-2 text-sm md:text-right text-quaternary">
-                <MapPin size={12} />
-                <span>San Francisco, CA</span>
-              </p>
             </SectionContent>
           </SectionContainer>
 
