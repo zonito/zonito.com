@@ -81,14 +81,14 @@ export async function editUser(_, args: MutationEditUserArgs, ctx: Context) {
       postmark.sendEmailWithTemplate({
         From: baseEmail,
         To: email,
-        TemplateId: 25539089,
+        TemplateId: parseInt(process.env.POSTMARK_EMAIL_CONFIRM_TEMPLATE_ID),
         TemplateModel: { url },
       })
     } else {
       console.log('Sending confirmation email', {
         From: baseEmail,
         To: email,
-        TemplateId: 25539089,
+        TemplateId: process.env.POSTMARK_EMAIL_CONFIRM_TEMPLATE_ID,
         TemplateModel: { url },
       })
     }

@@ -26,7 +26,7 @@ async function getSubscriber({ email }) {
         path: 'revueSubscribers',
         fetch: getSubscribers,
       })
-      return subscribers.find((sub) => sub.email === email)
+      return subscribers.find((sub: any) => sub.email === email)
     }
   } catch (e) {
     console.error({ e })
