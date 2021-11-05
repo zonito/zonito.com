@@ -9,6 +9,7 @@ import {
   MutationEditCommentArgs,
   UserRole,
 } from '~/graphql/types.generated'
+import { graphcdn } from '~/lib/graphcdn'
 import { emailMe } from '~/lib/postmark'
 
 export async function editComment(
@@ -23,27 +24,28 @@ export async function editComment(
     throw new UserInputError('Comment can’t be blank')
 
   const comment = await prisma.comment.findUnique({
-    where: {
-      id,
-    },
+    where: { id },
   })
 
-  // comment doesn't exist, already deleted
   if (!comment) throw new UserInputError('Comment doesn’t exist')
 
-  // no permission
   if (comment.userId !== viewer?.id) {
     throw new UserInputError('You can’t edit this comment')
   }
 
-  return await prisma.comment.update({
-    where: {
-      id,
-    },
-    data: {
-      text,
-    },
-  })
+  return await prisma.comment
+    .update({
+      where: { id },
+      data: { text },
+    })
+    .then((comment) => {
+      graphcdn.purgeList('comments')
+      return comment
+    })
+    .catch((err) => {
+      console.error({ err })
+      throw new UserInputError('Unable to edit comment')
+    })
 }
 
 export async function addComment(
@@ -105,13 +107,30 @@ export async function addComment(
     })
   }
 
-  return await prisma.comment.create({
-    data: {
-      text,
-      userId: viewer.id,
-      [field]: refId,
-    },
+  const [comment] = await Promise.all([
+    prisma.comment.create({
+      data: {
+        text,
+        userId: viewer.id,
+        [field]: refId,
+      },
+    }),
+    prisma[table].update({
+      where: {
+        id: refId,
+      },
+      data: {
+        updatedAt: new Date(),
+      },
+    }),
+  ]).catch((err) => {
+    console.error({ err })
+    throw new UserInputError('Unable to add comment')
   })
+
+  graphcdn.purgeList('comments')
+
+  return comment
 }
 
 export async function deleteComment(
@@ -123,9 +142,7 @@ export async function deleteComment(
   const { prisma, viewer } = ctx
 
   const comment = await prisma.comment.findUnique({
-    where: {
-      id,
-    },
+    where: { id },
   })
 
   // comment doesn't exist, already deleted
@@ -135,9 +152,16 @@ export async function deleteComment(
     throw new UserInputError('You can’t delete this comment')
   }
 
-  await prisma.comment.delete({
-    where: { id },
-  })
-
-  return true
+  return await prisma.comment
+    .delete({
+      where: { id },
+    })
+    .then(() => {
+      graphcdn.purgeList('comments')
+      return true
+    })
+    .catch((err) => {
+      console.error({ err })
+      throw new UserInputError('Unable to delete comment')
+    })
 }

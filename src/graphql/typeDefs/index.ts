@@ -181,10 +181,6 @@ export default gql`
       after: String
       filter: QuestionFilter
     ): QuestionsConnection!
-    repos: [Repo]!
-    signedUploadUrl(id: ID!): String
-    signedPlaybackUrl(id: ID!): String
-    transcription(transcriptionId: ID!): String
     tags: [Tag]!
   }
 

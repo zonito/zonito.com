@@ -2,7 +2,6 @@ import { getBookmark, getBookmarks } from './bookmarks'
 import { getComment, getComments } from './comment'
 import { getPost, getPosts } from './posts'
 import { getQuestion, getQuestions } from './questions'
-import { getRepos } from './repos'
 import { getStack, getStacks } from './stack'
 import { getTags } from './tags'
 import { getUser } from './user'
@@ -15,7 +14,6 @@ export default {
   bookmarks: getBookmarks,
   posts: getPosts,
   post: getPost,
-  repos: getRepos,
   question: getQuestion,
   questions: getQuestions,
   comment: getComment,
