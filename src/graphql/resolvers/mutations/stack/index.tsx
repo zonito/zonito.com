@@ -21,32 +21,6 @@ export async function editStack(_, args: MutationEditStackArgs, ctx: Context) {
   if (!url || url.length === 0)
     throw new UserInputError('Stack must have a URL')
 
-  /*
-    Keep our image storage somewhat clean by deleting unused images
-  */
-  const old = await prisma.stack.findUnique({ where: { id } })
-
-  if (old.image !== data.image) {
-    try {
-      const url = new URL(old.image)
-      if (validUrl(url)) {
-        const [, , imageId] = url.pathname.split('/')
-
-        await fetch(
-          `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/images/v1/${imageId}`,
-          {
-            method: 'DELETE',
-            headers: {
-              Authorization: `Bearer ${process.env.CLOUDFLARE_IMAGES_KEY}`,
-            },
-          }
-        )
-      }
-    } catch (err) {
-      console.error({ err })
-    }
-  }
-
   await prisma.stack.update({
     where: { id },
     data: {
@@ -123,25 +97,6 @@ export async function deleteStack(
 ) {
   const { id } = args
   const { prisma } = ctx
-
-  const old = await prisma.stack.findUnique({ where: { id } })
-  try {
-    const url = new URL(old.image)
-    const [, , imageId] = url.pathname.split('/')
-    if (validUrl(url)) {
-      await fetch(
-        `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/images/v1/${imageId}`,
-        {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${process.env.CLOUDFLARE_IMAGES_KEY}`,
-          },
-        }
-      )
-    }
-  } catch (err) {
-    console.error({ err })
-  }
 
   await prisma.stack.delete({
     where: { id },

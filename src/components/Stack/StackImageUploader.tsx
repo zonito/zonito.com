@@ -4,45 +4,33 @@ import { useDropzone } from 'react-dropzone'
 import { Trash, Upload } from 'react-feather'
 
 import { LoadingSpinner } from '~/components/LoadingSpinner'
-import { CLOUDFLARE_IMAGE_DELIVERY_BASE_URL } from '~/lib/cloudflare'
 
 export function StackImageUploader({ stack, onImageUploaded }) {
   const [loading, setLoading] = useState(false)
   const [initialImage, setInitialImage] = useState(stack?.image)
   const [previewImage, setPreviewImage] = useState(null)
 
-  async function getSignedUrl() {
-    const data = await fetch('/api/images/sign').then((res) => res.json())
-    return data?.uploadURL
-  }
-
-  async function uploadFile({ file, signedUrl }) {
+  async function uploadFile({ file }) {
     const data = new FormData()
     data.append('file', file)
-    const upload = await fetch(signedUrl, {
+    const upload = await fetch('https://telegraph.work/upload', {
       method: 'POST',
       body: data,
     }).then((r) => r.json())
-    return upload?.result?.id
+    return upload[0]?.src
   }
 
   const onDrop = useCallback(async (acceptedFiles) => {
     setLoading(true)
     const file = acceptedFiles[0]
-    const signedUrl = await getSignedUrl()
 
-    if (!signedUrl) {
-      setLoading(false)
-      return console.error('No signed url')
-    }
-
-    const id = await uploadFile({ file, signedUrl })
+    const id = await uploadFile({ file })
     if (!id) {
       setLoading(false)
       return console.error('Upload failed')
     }
 
-    const url = `${CLOUDFLARE_IMAGE_DELIVERY_BASE_URL}/${id}/stack`
+    const url = `https://telegraph.work${id}`
     setLoading(false)
     setPreviewImage(url)
     return onImageUploaded(url)
