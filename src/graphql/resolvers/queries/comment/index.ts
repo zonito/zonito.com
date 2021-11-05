@@ -1,5 +1,3 @@
-import { UserInputError } from 'apollo-server-micro'
-
 import { Context } from '~/graphql/context'
 import {
   Bookmark,
@@ -26,7 +24,7 @@ export async function getComments(_, args, ctx: Context) {
   const { prisma } = ctx
 
   if (!refId || !type) {
-    throw new UserInputError('refId and type are required')
+    return []
   }
 
   switch (type) {
@@ -46,6 +44,13 @@ export async function getComments(_, args, ctx: Context) {
     }
     case CommentType.Stack: {
       const results = await prisma.stack
+        .findUnique({ where: { id: refId } })
+        .comments()
+
+      return results || []
+    }
+    case CommentType.Post: {
+      const results = await prisma.post
         .findUnique({ where: { id: refId } })
         .comments()
 

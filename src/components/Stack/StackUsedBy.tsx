@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import * as React from 'react'
 
 import { Avatar } from '~/components/Avatar'
@@ -5,10 +6,10 @@ import { Tooltip } from '~/components/Tooltip'
 import { GET_STACK } from '~/graphql/queries/stack'
 import {
   useGetStackQuery,
-  UserRole,
   useToggleStackUserMutation,
   useViewerQuery,
 } from '~/graphql/types.generated'
+import { useWindowFocus } from '~/hooks/useWindowFocus'
 
 export function StackUsedBy(props) {
   const { triggerSignIn } = props
@@ -20,11 +21,7 @@ export function StackUsedBy(props) {
   })
   const [toggleStackUser] = useToggleStackUserMutation()
 
-  React.useEffect(() => {
-    const refetchQuery = () => refetch()
-    window.addEventListener('focus', refetchQuery)
-    return () => window.removeEventListener('focus', refetchQuery)
-  })
+  useWindowFocus({ onFocus: refetch })
 
   if (loading) {
     return null
@@ -105,15 +102,19 @@ export function StackUsedBy(props) {
           <div className="flex flex-wrap -m-1">
             {data.stack.usedBy.map((user) => (
               <Tooltip key={user.id} content={user.name}>
-                <span className="inline-flex p-1">
-                  <Avatar
-                    user={user}
-                    src={user.avatar}
-                    width={32}
-                    height={32}
-                    className="rounded-full"
-                    layout="fixed"
-                  />
+                <span>
+                  <Link href={`/u/${user.username}`} passHref>
+                    <a className="inline-flex p-1">
+                      <Avatar
+                        user={user}
+                        src={user.avatar}
+                        width={32}
+                        height={32}
+                        className="rounded-full"
+                        layout="fixed"
+                      />
+                    </a>
+                  </Link>
                 </span>
               </Tooltip>
             ))}

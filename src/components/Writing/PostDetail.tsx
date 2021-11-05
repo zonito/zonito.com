@@ -1,16 +1,13 @@
-import deepmerge from 'deepmerge'
+import Link from 'next/link'
 import * as React from 'react'
-import ReactMarkdown from 'react-markdown'
-import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
-import remarkGfm from 'remark-gfm'
 
 import { Detail } from '~/components/ListDetail/Detail'
 import { TitleBar } from '~/components/ListDetail/TitleBar'
-import { SyntaxHighlighter } from '~/components/SyntaxHighlighter'
 import { CommentType, useGetPostQuery } from '~/graphql/types.generated'
 import { timestampToCleanTime } from '~/lib/transformers'
 
 import { Comments } from '../Comments'
+import { MarkdownRenderer } from '../MarkdownRenderer'
 import { PostSEO } from './PostSEO'
 
 export function PostDetail({ slug }) {
@@ -18,28 +15,18 @@ export function PostDetail({ slug }) {
   const titleRef = React.useRef(null)
   const { data, error, loading } = useGetPostQuery({ variables: { slug } })
 
-  if (error) {
-    return null
-  }
-
   if (loading) {
     return <Detail.Loading />
   }
 
-  if (!data?.post) {
-    return null
+  if (!data?.post || error) {
+    return <Detail.Null />
   }
 
-  const schema = deepmerge(defaultSchema, {
-    attributes: { '*': ['className'] },
-  })
-
   const { post } = data
-
   const publishedAt = timestampToCleanTime({ timestamp: post.publishedAt })
   return (
-    <React.Fragment>
-      <SyntaxHighlighter data={post} />
+    <>
       <PostSEO post={post} />
       <Detail.Container data-cy="post-detail" ref={scrollContainerRef}>
         <TitleBar
@@ -63,11 +50,24 @@ export function PostDetail({ slug }) {
             </span>
           </Detail.Header>
 
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[[rehypeSanitize, schema]]}
+          <MarkdownRenderer
             children={post.text}
             className="mt-8 prose lg:prose-lg"
+            components={{
+              a: ({ href, ...rest }) => {
+                const url = new URL(href)
+                if (url.origin === 'https://brianlovin.com') {
+                  return (
+                    <Link href={href}>
+                      <a {...rest} />
+                    </Link>
+                  )
+                }
+                return (
+                  <a target="_blank" rel="noopener" href={href} {...rest} />
+                )
+              },
+            }}
           />
 
           {/* bottom padding to give space between post content and comments */}
@@ -76,6 +76,6 @@ export function PostDetail({ slug }) {
 
         <Comments refId={post.id} type={CommentType.Post} />
       </Detail.Container>
-    </React.Fragment>
+    </>
   )
 }
