@@ -16,4 +16,4 @@ jobs:
       - name: Push schema
         run: npx graphcdn push
         env:
-          GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_CI_TOKEN }}
+          GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
