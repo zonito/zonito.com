@@ -89,16 +89,6 @@ export function SidebarNavigation() {
       isExternal: false,
     },
 
-    {
-      href: '/system-design',
-      label: 'System Design',
-      icon: StackIcon,
-      trailingAccessory: null,
-      isActive: router.asPath.indexOf('/system-design') >= 0,
-      trailingAction: null,
-      isExternal: false,
-    },
-
     'Online',
 
     {
