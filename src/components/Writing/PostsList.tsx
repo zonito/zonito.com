@@ -23,8 +23,6 @@ export function PostsList() {
 
   const { posts } = data
 
-  if (!posts || posts.length === 0) return null
-
   return (
     <ListContainer data-cy="posts-list" onRef={setScrollContainerRef}>
       <WritingTitlebar scrollContainerRef={scrollContainerRef} />
