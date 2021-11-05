@@ -1,7 +1,9 @@
+name: zonito
 rootTypeNames:
   query: Query
   mutation: Mutation
 originUrl: 'https://zonito.com/api/graphql'
+schema: 'https://zonito.com/api/graphql'
 rules:
   - types:
       Query:
