@@ -3,6 +3,7 @@ import React from 'react'
 import { Detail } from '~/components/ListDetail/Detail'
 import { TitleBar } from '~/components/ListDetail/TitleBar'
 import routes from '~/config/routes'
+
 import { MarkdownRenderer } from '../MarkdownRenderer'
 
 const text = `
