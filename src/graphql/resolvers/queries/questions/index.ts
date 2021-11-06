@@ -17,6 +17,7 @@ export async function getQuestion(_, { id }: QueryQuestionArgs, ctx: Context) {
       _count: {
         select: {
           comments: true,
+          reactions: true,
         },
       },
     },
@@ -114,10 +115,14 @@ export async function getQuestions(
         _count: {
           select: {
             comments: true,
+            reactions: true,
           },
         },
       },
     })
+
+    // happens when there are no pending questions left to answer, for example
+    if (edges.length === 0) return nullResults
 
     // If we overfetched, then we know there are more results
     const hasNextPage = edges.length > first

@@ -58,10 +58,12 @@ export type Bookmark = {
   host: Scalars['String']
   id: Scalars['ID']
   image?: Maybe<Scalars['String']>
+  reactionCount?: Maybe<Scalars['Int']>
   tags: Array<Maybe<Tag>>
   title?: Maybe<Scalars['String']>
   updatedAt: Scalars['Date']
   url: Scalars['String']
+  viewerHasReacted?: Maybe<Scalars['Boolean']>
 }
 
 export type BookmarkEdge = {
@@ -167,6 +169,7 @@ export type Mutation = {
   editQuestion?: Maybe<Question>
   editStack?: Maybe<Stack>
   editUser?: Maybe<User>
+  toggleReaction?: Maybe<Reactable>
   toggleStackUser?: Maybe<Stack>
 }
 
@@ -175,7 +178,7 @@ export type MutationAddBookmarkArgs = {
 }
 
 export type MutationAddCommentArgs = {
-  refId: Scalars['String']
+  refId: Scalars['ID']
   text: Scalars['String']
   type: CommentType
 }
@@ -245,6 +248,11 @@ export type MutationEditUserArgs = {
   data?: Maybe<EditUserInput>
 }
 
+export type MutationToggleReactionArgs = {
+  refId: Scalars['ID']
+  type: ReactionType
+}
+
 export type MutationToggleStackUserArgs = {
   id: Scalars['ID']
 }
@@ -264,10 +272,12 @@ export type Post = {
   featureImage?: Maybe<Scalars['String']>
   id: Scalars['ID']
   publishedAt?: Maybe<Scalars['Date']>
+  reactionCount?: Maybe<Scalars['Int']>
   slug?: Maybe<Scalars['String']>
   text?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   updatedAt?: Maybe<Scalars['Date']>
+  viewerHasReacted?: Maybe<Scalars['Boolean']>
 }
 
 export type Query = {
@@ -302,8 +312,8 @@ export type QueryCommentArgs = {
 }
 
 export type QueryCommentsArgs = {
-  refId?: Maybe<Scalars['String']>
-  type?: Maybe<CommentType>
+  refId: Scalars['ID']
+  type: CommentType
 }
 
 export type QueryPostArgs = {
@@ -344,12 +354,14 @@ export type Question = {
   author?: Maybe<User>
   createdAt: Scalars['Date']
   description?: Maybe<Scalars['String']>
-  id: Scalars['String']
+  id: Scalars['ID']
+  reactionCount?: Maybe<Scalars['Int']>
   status?: Maybe<QuestionStatus>
   title: Scalars['String']
   updatedAt?: Maybe<Scalars['Date']>
   viewerCanComment?: Maybe<Scalars['Boolean']>
   viewerCanEdit?: Maybe<Scalars['Boolean']>
+  viewerHasReacted?: Maybe<Scalars['Boolean']>
 }
 
 export type QuestionEdge = {
@@ -373,12 +385,13 @@ export type QuestionsConnection = {
   pageInfo?: Maybe<PageInfo>
 }
 
-export type Repo = {
-  __typename?: 'Repo'
-  description?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  org?: Maybe<Scalars['String']>
-  stars?: Maybe<Scalars['Int']>
+export type Reactable = Bookmark | Post | Question | Stack
+
+export enum ReactionType {
+  Bookmark = 'BOOKMARK',
+  Post = 'POST',
+  Question = 'QUESTION',
+  Stack = 'STACK',
 }
 
 export type Stack = {
@@ -388,11 +401,13 @@ export type Stack = {
   id: Scalars['ID']
   image?: Maybe<Scalars['String']>
   name: Scalars['String']
+  reactionCount?: Maybe<Scalars['Int']>
   tags: Array<Maybe<Tag>>
   updatedAt?: Maybe<Scalars['Date']>
   url: Scalars['String']
   usedBy: Array<Maybe<User>>
   usedByViewer?: Maybe<Scalars['Boolean']>
+  viewerHasReacted?: Maybe<Scalars['Boolean']>
 }
 
 export type StackEdge = {
@@ -440,6 +455,8 @@ export type BookmarkInfoFragment = {
   title?: string | null | undefined
   description?: string | null | undefined
   faviconUrl?: string | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
 }
 
 export type BookmarkInfoWithTagsFragment = {
@@ -450,6 +467,8 @@ export type BookmarkInfoWithTagsFragment = {
   title?: string | null | undefined
   description?: string | null | undefined
   faviconUrl?: string | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
   tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
 }
 
@@ -477,6 +496,8 @@ export type BookmarksConnectionFragment = {
               title?: string | null | undefined
               description?: string | null | undefined
               faviconUrl?: string | null | undefined
+              reactionCount?: number | null | undefined
+              viewerHasReacted?: boolean | null | undefined
               tags: Array<
                 { __typename?: 'Tag'; name: string } | null | undefined
               >
@@ -518,6 +539,8 @@ export type PostInfoFragment = {
   slug?: string | null | undefined
   excerpt?: string | null | undefined
   featureImage?: string | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
   author?:
     | {
         __typename: 'User'
@@ -540,6 +563,8 @@ export type QuestionInfoFragment = {
   title: string
   description?: string | null | undefined
   status?: QuestionStatus | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
   author?:
     | {
         __typename: 'User'
@@ -578,6 +603,8 @@ export type QuestionsConnectionFragment = {
               title: string
               description?: string | null | undefined
               status?: QuestionStatus | null | undefined
+              reactionCount?: number | null | undefined
+              viewerHasReacted?: boolean | null | undefined
               author?:
                 | {
                     __typename: 'User'
@@ -599,14 +626,6 @@ export type QuestionsConnectionFragment = {
   >
 }
 
-export type RepoInfoFragment = {
-  __typename?: 'Repo'
-  org?: string | null | undefined
-  name?: string | null | undefined
-  description?: string | null | undefined
-  stars?: number | null | undefined
-}
-
 export type StackInfoFragment = {
   __typename: 'Stack'
   id: string
@@ -616,6 +635,8 @@ export type StackInfoFragment = {
   description?: string | null | undefined
   url: string
   image?: string | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
 }
 
 export type StackInfoWithTagsFragment = {
@@ -627,6 +648,8 @@ export type StackInfoWithTagsFragment = {
   description?: string | null | undefined
   url: string
   image?: string | null | undefined
+  reactionCount?: number | null | undefined
+  viewerHasReacted?: boolean | null | undefined
   tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
 }
 
@@ -655,6 +678,8 @@ export type StacksConnectionFragment = {
               description?: string | null | undefined
               url: string
               image?: string | null | undefined
+              reactionCount?: number | null | undefined
+              viewerHasReacted?: boolean | null | undefined
             }
           | null
           | undefined
@@ -708,6 +733,8 @@ export type EditBookmarkMutation = {
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -738,6 +765,8 @@ export type AddBookmarkMutation = {
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -745,7 +774,7 @@ export type AddBookmarkMutation = {
 }
 
 export type AddCommentMutationVariables = Exact<{
-  refId: Scalars['String']
+  refId: Scalars['ID']
   type: CommentType
   text: Scalars['String']
 }>
@@ -859,6 +888,8 @@ export type EditPostMutation = {
         slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -903,6 +934,8 @@ export type AddPostMutation = {
         slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -936,6 +969,8 @@ export type EditQuestionMutation = {
         title: string
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -977,6 +1012,8 @@ export type AddQuestionMutation = {
         title: string
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -989,6 +1026,43 @@ export type AddQuestionMutation = {
             }
           | null
           | undefined
+      }
+    | null
+    | undefined
+}
+
+export type ToggleReactionMutationVariables = Exact<{
+  refId: Scalars['ID']
+  type: ReactionType
+}>
+
+export type ToggleReactionMutation = {
+  __typename?: 'Mutation'
+  toggleReaction?:
+    | {
+        __typename?: 'Bookmark'
+        id: string
+        url: string
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
+      }
+    | {
+        __typename?: 'Post'
+        id: string
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
+      }
+    | {
+        __typename?: 'Question'
+        id: string
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
+      }
+    | {
+        __typename?: 'Stack'
+        id: string
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
       }
     | null
     | undefined
@@ -1011,6 +1085,8 @@ export type EditStackMutation = {
         description?: string | null | undefined
         url: string
         image?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1042,6 +1118,8 @@ export type AddStackMutation = {
         description?: string | null | undefined
         url: string
         image?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1135,6 +1213,8 @@ export type GetBookmarksQuery = {
                 title?: string | null | undefined
                 description?: string | null | undefined
                 faviconUrl?: string | null | undefined
+                reactionCount?: number | null | undefined
+                viewerHasReacted?: boolean | null | undefined
                 tags: Array<
                   { __typename?: 'Tag'; name: string } | null | undefined
                 >
@@ -1163,6 +1243,8 @@ export type GetBookmarkQuery = {
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1170,8 +1252,8 @@ export type GetBookmarkQuery = {
 }
 
 export type GetCommentsQueryVariables = Exact<{
-  refId?: Maybe<Scalars['String']>
-  type?: Maybe<CommentType>
+  refId: Scalars['ID']
+  type: CommentType
 }>
 
 export type GetCommentsQuery = {
@@ -1215,6 +1297,8 @@ export type GetPostsQuery = {
         slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -1251,6 +1335,8 @@ export type GetPostQuery = {
         slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -1300,6 +1386,8 @@ export type GetQuestionsQuery = {
                 title: string
                 description?: string | null | undefined
                 status?: QuestionStatus | null | undefined
+                reactionCount?: number | null | undefined
+                viewerHasReacted?: boolean | null | undefined
                 author?:
                   | {
                       __typename: 'User'
@@ -1339,6 +1427,8 @@ export type GetQuestionQuery = {
         title: string
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         author?:
           | {
               __typename: 'User'
@@ -1388,6 +1478,8 @@ export type GetStacksQuery = {
                 description?: string | null | undefined
                 url: string
                 image?: string | null | undefined
+                reactionCount?: number | null | undefined
+                viewerHasReacted?: boolean | null | undefined
               }
             | null
             | undefined
@@ -1415,6 +1507,8 @@ export type GetStackQuery = {
         description?: string | null | undefined
         url: string
         image?: string | null | undefined
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1522,6 +1616,8 @@ export const BookmarkInfoFragmentDoc = gql`
     title
     description
     faviconUrl
+    reactionCount
+    viewerHasReacted
   }
 `
 export const BookmarkInfoWithTagsFragmentDoc = gql`
@@ -1585,6 +1681,8 @@ export const PostInfoFragmentDoc = gql`
     slug
     excerpt
     featureImage
+    reactionCount
+    viewerHasReacted
     author {
       ...UserInfo
     }
@@ -1599,6 +1697,8 @@ export const QuestionInfoFragmentDoc = gql`
     title
     description
     status
+    reactionCount
+    viewerHasReacted
     author {
       ...UserInfo
     }
@@ -1621,14 +1721,6 @@ export const QuestionsConnectionFragmentDoc = gql`
   }
   ${QuestionInfoFragmentDoc}
 `
-export const RepoInfoFragmentDoc = gql`
-  fragment RepoInfo on Repo {
-    org
-    name
-    description
-    stars
-  }
-`
 export const StackInfoFragmentDoc = gql`
   fragment StackInfo on Stack {
     __typename
@@ -1639,6 +1731,8 @@ export const StackInfoFragmentDoc = gql`
     description
     url
     image
+    reactionCount
+    viewerHasReacted
   }
 `
 export const StackInfoWithTagsFragmentDoc = gql`
@@ -1828,7 +1922,7 @@ export type AddBookmarkMutationOptions = Apollo.BaseMutationOptions<
   AddBookmarkMutationVariables
 >
 export const AddCommentDocument = gql`
-  mutation addComment($refId: String!, $type: CommentType!, $text: String!) {
+  mutation addComment($refId: ID!, $type: CommentType!, $text: String!) {
     addComment(refId: $refId, type: $type, text: $text) {
       ...CommentInfo
     }
@@ -2329,6 +2423,77 @@ export type AddQuestionMutationOptions = Apollo.BaseMutationOptions<
   AddQuestionMutation,
   AddQuestionMutationVariables
 >
+export const ToggleReactionDocument = gql`
+  mutation toggleReaction($refId: ID!, $type: ReactionType!) {
+    toggleReaction(refId: $refId, type: $type) {
+      ... on Stack {
+        id
+        reactionCount
+        viewerHasReacted
+      }
+      ... on Bookmark {
+        id
+        url
+        reactionCount
+        viewerHasReacted
+      }
+      ... on Question {
+        id
+        reactionCount
+        viewerHasReacted
+      }
+      ... on Post {
+        id
+        reactionCount
+        viewerHasReacted
+      }
+    }
+  }
+`
+export type ToggleReactionMutationFn = Apollo.MutationFunction<
+  ToggleReactionMutation,
+  ToggleReactionMutationVariables
+>
+
+/**
+ * __useToggleReactionMutation__
+ *
+ * To run a mutation, you first call `useToggleReactionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useToggleReactionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [toggleReactionMutation, { data, loading, error }] = useToggleReactionMutation({
+ *   variables: {
+ *      refId: // value for 'refId'
+ *      type: // value for 'type'
+ *   },
+ * });
+ */
+export function useToggleReactionMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    ToggleReactionMutation,
+    ToggleReactionMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    ToggleReactionMutation,
+    ToggleReactionMutationVariables
+  >(ToggleReactionDocument, options)
+}
+export type ToggleReactionMutationHookResult = ReturnType<
+  typeof useToggleReactionMutation
+>
+export type ToggleReactionMutationResult =
+  Apollo.MutationResult<ToggleReactionMutation>
+export type ToggleReactionMutationOptions = Apollo.BaseMutationOptions<
+  ToggleReactionMutation,
+  ToggleReactionMutationVariables
+>
 export const EditStackDocument = gql`
   mutation editStack($id: ID!, $data: EditStackInput!) {
     editStack(id: $id, data: $data) {
@@ -2743,7 +2908,7 @@ export type GetBookmarkQueryResult = Apollo.QueryResult<
   GetBookmarkQueryVariables
 >
 export const GetCommentsDocument = gql`
-  query getComments($refId: String, $type: CommentType) {
+  query getComments($refId: ID!, $type: CommentType!) {
     comments(refId: $refId, type: $type) {
       ...CommentInfo
     }
@@ -2769,7 +2934,7 @@ export const GetCommentsDocument = gql`
  * });
  */
 export function useGetCommentsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
+  baseOptions: Apollo.QueryHookOptions<
     GetCommentsQuery,
     GetCommentsQueryVariables
   >

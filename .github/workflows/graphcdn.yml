@@ -1,3 +1,4 @@
+# https://graphcdn.io/docs/reference/graphcdn.yml
 name: GraphCDN
 on:
   push:
