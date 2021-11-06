@@ -4,6 +4,7 @@ import { Detail } from '~/components/ListDetail/Detail'
 import { TitleBar } from '~/components/ListDetail/TitleBar'
 
 import { MarkdownRenderer } from '../MarkdownRenderer'
+import { about } from './about'
 
 function SectionTitle(props) {
   return (
@@ -56,9 +57,25 @@ const workHistory = [
     subtitle: 'Principal Software Engineer',
     date: '2014—\u00a0\u00a0',
   },
+  {
+    href: 'https://www.google.com',
+    title: 'Google',
+    subtitle: 'Web Developer',
+    date: '2010—2014',
+  },
+  {
+    href: 'https://www.linkedin.com/company/oxylabs-networks',
+    title: 'Oxylabs',
+    subtitle: 'Game Developer',
+    date: '2009—2010',
+  },
+  {
+    href: 'https://www.linkedin.com/company/patni/',
+    title: 'Patni Computer Systems Ltd',
+    subtitle: 'Software Developer',
+    date: '2008—2010==09',
+  },
 ]
-
-const about = "Hey, I'm **Love Sharma**"
 
 export function Intro() {
   const scrollContainerRef = React.useRef(null)
@@ -70,7 +87,7 @@ export function Intro() {
         magicTitle
         titleRef={titleRef}
         scrollContainerRef={scrollContainerRef}
-        title="Home"
+        title="Love Sharma"
       />
 
       {/* Keep this div to trigger the magic scroll */}
@@ -84,7 +101,7 @@ export function Intro() {
               <MarkdownRenderer
                 className="prose"
                 children={about}
-                variant="comment"
+                variant="longform"
               />
             </SectionContent>
           </SectionContainer>
