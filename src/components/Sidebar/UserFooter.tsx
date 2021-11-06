@@ -48,21 +48,14 @@ export function UserFooter() {
   if (data?.viewer) {
     return (
       <Container>
-        <Link href={`/u/${data.viewer.username}`}>
-          <a
-            onClick={() => setIsOpen(false)}
-            className="flex items-center flex-none rounded-full"
-          >
-            <Avatar
-              user={data.viewer}
-              src={data.viewer.avatar}
-              width={24}
-              height={24}
-              layout="fixed"
-              className="rounded-full"
-            />
-          </a>
-        </Link>
+        <Avatar
+          user={data.viewer}
+          src={data.viewer.avatar}
+          width={24}
+          height={24}
+          layout="fixed"
+          className="rounded-full"
+        />
         <GhostButton
           onClick={() => setIsOpen(false)}
           size="small-square"
