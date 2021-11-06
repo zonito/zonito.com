@@ -103,18 +103,14 @@ export function StackUsedBy(props) {
             {data.stack.usedBy.map((user) => (
               <Tooltip key={user.id} content={user.name}>
                 <span>
-                  <Link href={`/u/${user.username}`} passHref>
-                    <a className="inline-flex p-1">
-                      <Avatar
-                        user={user}
-                        src={user.avatar}
-                        width={32}
-                        height={32}
-                        className="rounded-full"
-                        layout="fixed"
-                      />
-                    </a>
-                  </Link>
+                  <Avatar
+                    user={user}
+                    src={user.avatar}
+                    width={32}
+                    height={32}
+                    className="rounded-full"
+                    layout="fixed"
+                  />
                 </span>
               </Tooltip>
             ))}

@@ -19,7 +19,7 @@ function LinkRenderer({ href, ...rest }: any) {
   }
   try {
     const url = new URL(href)
-    if (url.origin === 'https://brianlovin.com') {
+    if (url.origin === 'https://zonito.com') {
       return (
         <Link href={href}>
           <a {...rest} />
