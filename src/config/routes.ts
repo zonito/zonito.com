@@ -34,14 +34,14 @@ const routes = {
       url: 'bookmarks',
     }),
   },
-  security: {
-    label: 'Security Checklist',
-    path: '/security',
+  routinglayer: {
+    label: 'Routing Layer',
+    path: '/routinglayer',
     seo: extendSEO({
-      title: 'Security Checklist',
-      description: 'Staying safe on the internet.',
+      title: 'Routing Layer',
+      description: 'Route Log, metrics, and analytics to different destinations.',
       image: 'og/security.png',
-      url: 'security',
+      url: 'routinglayer',
     }),
   },
   stack: {

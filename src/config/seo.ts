@@ -2,18 +2,18 @@ export const baseUrl = process.env.BASE_URL;
 export const baseEmail = 'hello@zonito.com'
 
 export const defaultSEO = {
-  title: 'Zonito | Love Sharma',
+  title: 'Love Sharma | Personal Website',
   description:
     'Product designer, podcaster, and writer, living in San Francisco.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    site_name: 'Zonito | Love Sharma',
+    site_name: 'Love Sharma | Personal Website',
     images: [
       {
         url: `${baseUrl}/static/og/default.png`,
-        alt: 'Zonito | Love Sharma',
+        alt: 'Love Sharma | Personal Website',
       },
     ],
   },

@@ -9,7 +9,8 @@ import {
   ExternalLinkIcon,
   GitHubIcon,
   HomeIcon,
-  SecurityChecklistIcon,
+  MessageIcon,
+  RoutingLayerIcon,
   StackIcon,
   TwitterIcon,
   WritingIcon,
@@ -80,16 +81,26 @@ export function SidebarNavigation() {
     'Projects',
 
     {
-      href: '/security',
-      label: 'Security Checklist',
-      icon: SecurityChecklistIcon,
+      href: '/routinglayer',
+      label: 'Routing Layer',
+      icon: RoutingLayerIcon,
       trailingAccessory: null,
-      isActive: router.asPath.indexOf('/security') >= 0,
+      isActive: router.asPath.indexOf('/routinglayer') >= 0,
       trailingAction: null,
       isExternal: false,
     },
 
     'Online',
+
+    {
+      href: 'https://t.me/zonito',
+      label: 'Telegram',
+      icon: MessageIcon,
+      trailingAccessory: ExternalLinkIcon,
+      isActive: false,
+      trailingAction: null,
+      isExternal: true,
+    },
 
     {
       href: 'https://twitter.com/zonito87',

@@ -7,7 +7,7 @@ export async function generateRSS(posts) {
   const date = new Date()
   const updated = new Date(posts[0].publishedAt)
   const author = {
-    name: 'Zonito',
+    name: 'Love Sharma',
     email: baseEmail,
     link: baseUrl,
   }
@@ -20,7 +20,7 @@ export async function generateRSS(posts) {
     language: 'en',
     image: `${baseUrl}/static/meta/icon-512.png`,
     favicon: `${baseUrl}/static/favicon.ico`,
-    copyright: `All rights reserved ${date.getFullYear()}, Zonito`,
+    copyright: `All rights reserved ${date.getFullYear()}, Love Sharma`,
     updated,
     feedLinks: {
       rss2: `${baseUrl}/writing/rss`,

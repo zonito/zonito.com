@@ -3,7 +3,7 @@
 
 describe('Security checklist', () => {
   before(() => {
-    cy.visit('/security')
+    cy.visit('/routinglayer')
   })
 
   it('should render page', () => {

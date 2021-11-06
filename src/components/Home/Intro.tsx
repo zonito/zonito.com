@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
-import { MapPin } from 'react-feather'
 
-import Button from '~/components/Button'
 import { Detail } from '~/components/ListDetail/Detail'
 import { TitleBar } from '~/components/ListDetail/TitleBar'
+import { MarkdownRenderer } from '../MarkdownRenderer'
 
 function SectionTitle(props) {
   return (
@@ -53,32 +51,14 @@ function SectionContainer(props) {
 
 const workHistory = [
   {
-    href: 'https://github.com/mobile',
-    title: 'GitHub',
-    subtitle: 'Product Designer',
-    date: '2018—\u00a0\u00a0',
-  },
-  {
-    href: 'https://designdetails.fm',
-    title: 'Design Details Podcast',
-    subtitle: 'Co-host',
+    href: 'https://www.autodesk.com',
+    title: 'Autodesk',
+    subtitle: 'Principal Software Engineer',
     date: '2014—\u00a0\u00a0',
-  },
-  {
-    href: 'https://github.com/withspectrum/spectrum',
-    title: 'Spectrum.chat',
-    subtitle: 'Co-founder',
-    date: '2017—18',
   },
 ]
 
-const speakingData = [
-  {
-    href: 'https://progressionapp.com/blog/podcast-26-brian-lovin-github-spectrum-design-details-on-the-rise-of-the-senior-ic/',
-    title: 'Progression Podcast',
-    date: "Jun '21",
-  },
-]
+const about = "Hey, I'm **Love Sharma**"
 
 export function Intro() {
   const scrollContainerRef = React.useRef(null)
@@ -101,16 +81,11 @@ export function Intro() {
           <SectionContainer>
             <SectionTitle />
             <SectionContent>
-              <div className="prose text-primary">
-                <p>
-                  Hey, I&apos;m Love Sharma. I&apos;m a developer,{' '}
-                  <Link href="/writing" passHref>
-                    <a>writer</a>
-                  </Link>
-                  , and{' '}
-                  <a href="https://github.com/zonito">software tinkerer</a>.
-                </p>
-              </div>
+              <MarkdownRenderer
+                className="prose"
+                children={about}
+                variant="comment"
+              />
             </SectionContent>
           </SectionContainer>
 
@@ -125,22 +100,6 @@ export function Intro() {
                     subtitle={job.subtitle}
                     date={job.date}
                     key={job.href}
-                  />
-                ))}
-              </div>
-            </SectionContent>
-          </SectionContainer>
-
-          <SectionContainer>
-            <SectionTitle>Speaking</SectionTitle>
-            <SectionContent>
-              <div className="flex flex-col space-y-3">
-                {speakingData.map((s) => (
-                  <TableRow
-                    href={s.href}
-                    title={s.title}
-                    date={s.date}
-                    key={s.href}
                   />
                 ))}
               </div>

@@ -23,7 +23,7 @@ export function Sidebar() {
         <TitleBar
           scrollContainerRef={scrollContainerRef}
           leadingAccessory={null}
-          title="Zonito"
+          title="Love Sharma"
         />
         <SidebarNavigation />
         <UserFooter />

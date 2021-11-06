@@ -19,9 +19,7 @@ import {
   IS_PROD,
 } from '~/graphql/constants'
 
-const GRAPHQL_ENDPOINT = IS_PROD
-  ? GRAPHCDN_ENDPOINT
-  : IS_PREVIEW
+const GRAPHQL_ENDPOINT = IS_PREVIEW
   ? `https://${process.env.VERCEL_URL}/api/graphql`
   : '/api/graphql'
 
