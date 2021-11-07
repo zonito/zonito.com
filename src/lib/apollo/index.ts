@@ -28,8 +28,8 @@ function createIsomorphLink({ context }) {
     return new SchemaLink({ schema, context })
   } else {
     return new HttpLink({
-      uri: GRAPHQL_ENDPOINT,
-      credentials: 'same-origin',
+      uri: GRAPHQL_ENDPOINT || '/api/graphql',
+      credentials: 'include',
     })
   }
 }

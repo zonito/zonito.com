@@ -16,6 +16,6 @@ jobs:
           check-latest: true
 
       - name: Push schema
-        run: npx graphcdn push
+        run: npx graphcdn push --service zonito
         env:
           GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_CI_TOKEN }}
