@@ -4,7 +4,7 @@
 describe('Writing detail', () => {
   before(() => {
     cy.visit(
-      '/writing/what-ive-learned-so-far-about-design-advising-and-angel-investing'
+      '/writing/routing-layer'
     )
   })
 
