@@ -3,7 +3,7 @@
 
 describe('Stack detail', () => {
   before(() => {
-    cy.visit('/stack/ckuxo0mk400148faavw4pabcu')
+    cy.visit('/stack/ckvovkhrl000808l2x808hspt')
   })
 
   it('should render stack list', () => {

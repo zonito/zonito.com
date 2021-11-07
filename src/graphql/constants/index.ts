@@ -7,10 +7,7 @@ export const GRAPHCDN_PURGE_ENDPOINT = process.env.GRAPHCDN_PURGE_ENDPOINT
 export const CLIENT_URL = IS_PROD ? baseUrl : 'http://localhost:3000'
 
 export const GRAPHQL_ENDPOINT = IS_DEV
-  ? '/api/graphql'
-  : IS_PREVIEW
-  ? `https://${process.env.VERCEL_URL}/api/graphql`
-  : 'https://graphcdn.zonito.com'
+  ? '/api/graphql' : `https://zonito.com/api/graphql`
 
 export const PAGINATION_AMOUNT = 24
 
