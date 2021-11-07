@@ -10,7 +10,6 @@ import {
   GitHubIcon,
   HomeIcon,
   MessageIcon,
-  RoutingLayerIcon,
   StackIcon,
   TwitterIcon,
   WritingIcon,
@@ -74,18 +73,6 @@ export function SidebarNavigation() {
       icon: StackIcon,
       trailingAccessory: null,
       isActive: router.asPath.indexOf('/stack') >= 0,
-      trailingAction: null,
-      isExternal: false,
-    },
-
-    'Projects',
-
-    {
-      href: '/routinglayer',
-      label: 'Routing Layer',
-      icon: RoutingLayerIcon,
-      trailingAccessory: null,
-      isActive: router.asPath.indexOf('/routinglayer') >= 0,
       trailingAction: null,
       isExternal: false,
     },

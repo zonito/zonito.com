@@ -34,16 +34,6 @@ const routes = {
       url: 'bookmarks',
     }),
   },
-  routinglayer: {
-    label: 'Routing Layer',
-    path: '/routinglayer',
-    seo: extendSEO({
-      title: 'Routing Layer',
-      description: 'Route Log, metrics, and analytics to different destinations.',
-      image: 'og/security.png',
-      url: 'routinglayer',
-    }),
-  },
   stack: {
     label: 'Stack',
     path: '/stack',
