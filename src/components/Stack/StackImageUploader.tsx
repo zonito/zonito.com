@@ -12,25 +12,24 @@ export function StackImageUploader({ stack, onImageUploaded }) {
 
   async function uploadFile({ file }) {
     const data = new FormData()
-    data.append('file', file)
-    const upload = await fetch('https://telegraph.work/upload', {
+    data.append('image', file)
+    const url = `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMGBB_API_KEY}`
+    const upload = await fetch(url, {
       method: 'POST',
       body: data,
     }).then((r) => r.json())
-    return upload[0]?.src
+    return upload?.data?.url
   }
 
   const onDrop = useCallback(async (acceptedFiles) => {
     setLoading(true)
     const file = acceptedFiles[0]
 
-    const id = await uploadFile({ file })
-    if (!id) {
+    const url = await uploadFile({ file })
+    if (!url) {
       setLoading(false)
       return console.error('Upload failed')
     }
-
-    const url = `https://telegraph.work${id}`
     setLoading(false)
     setPreviewImage(url)
     return onImageUploaded(url)

@@ -6,7 +6,7 @@ module.exports = {
     },
   },
   images: {
-    domains: ['pbs.twimg.com', 'telegraph.work', 'res.cloudinary.com'],
+    domains: ['pbs.twimg.com', 'telegraph.work', 'i.ibb.co'],
   },
   async redirects() {
     return [
