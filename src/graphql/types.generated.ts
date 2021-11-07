@@ -447,7 +447,7 @@ export enum UserRole {
   User = 'USER',
 }
 
-export type BookmarkInfoFragment = {
+export type BookmarkCoreFragment = {
   __typename: 'Bookmark'
   id: string
   url: string
@@ -455,11 +455,9 @@ export type BookmarkInfoFragment = {
   title?: string | null | undefined
   description?: string | null | undefined
   faviconUrl?: string | null | undefined
-  reactionCount?: number | null | undefined
-  viewerHasReacted?: boolean | null | undefined
 }
 
-export type BookmarkInfoWithTagsFragment = {
+export type BookmarkListItemFragment = {
   __typename: 'Bookmark'
   id: string
   url: string
@@ -467,8 +465,18 @@ export type BookmarkInfoWithTagsFragment = {
   title?: string | null | undefined
   description?: string | null | undefined
   faviconUrl?: string | null | undefined
+}
+
+export type BookmarkDetailFragment = {
+  __typename: 'Bookmark'
   reactionCount?: number | null | undefined
   viewerHasReacted?: boolean | null | undefined
+  id: string
+  url: string
+  host: string
+  title?: string | null | undefined
+  description?: string | null | undefined
+  faviconUrl?: string | null | undefined
   tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
 }
 
@@ -496,11 +504,6 @@ export type BookmarksConnectionFragment = {
               title?: string | null | undefined
               description?: string | null | undefined
               faviconUrl?: string | null | undefined
-              reactionCount?: number | null | undefined
-              viewerHasReacted?: boolean | null | undefined
-              tags: Array<
-                { __typename?: 'Tag'; name: string } | null | undefined
-              >
             }
           | null
           | undefined
@@ -529,18 +532,40 @@ export type CommentInfoFragment = {
   }
 }
 
-export type PostInfoFragment = {
-  __typename?: 'Post'
+export type PostCoreFragment = {
+  __typename: 'Post'
   id: string
-  createdAt?: any | null | undefined
-  updatedAt?: any | null | undefined
   publishedAt?: any | null | undefined
   title?: string | null | undefined
   slug?: string | null | undefined
+}
+
+export type PostListItemFragment = {
+  __typename: 'Post'
+  id: string
+  publishedAt?: any | null | undefined
+  title?: string | null | undefined
+  slug?: string | null | undefined
+}
+
+export type PostDetailFragment = {
+  __typename: 'Post'
+  text?: string | null | undefined
   excerpt?: string | null | undefined
   featureImage?: string | null | undefined
   reactionCount?: number | null | undefined
   viewerHasReacted?: boolean | null | undefined
+  id: string
+  publishedAt?: any | null | undefined
+  title?: string | null | undefined
+  slug?: string | null | undefined
+}
+
+export type QuestionCoreFragment = {
+  __typename: 'Question'
+  id: string
+  title: string
+  createdAt: any
   author?:
     | {
         __typename: 'User'
@@ -555,16 +580,36 @@ export type PostInfoFragment = {
     | undefined
 }
 
-export type QuestionInfoFragment = {
-  __typename?: 'Question'
+export type QuestionListItemFragment = {
+  __typename: 'Question'
   id: string
-  createdAt: any
-  updatedAt?: any | null | undefined
   title: string
+  createdAt: any
+  author?:
+    | {
+        __typename: 'User'
+        id: string
+        username?: string | null | undefined
+        avatar?: string | null | undefined
+        name?: string | null | undefined
+        role?: UserRole | null | undefined
+        isViewer?: boolean | null | undefined
+      }
+    | null
+    | undefined
+}
+
+export type QuestionDetailFragment = {
+  __typename: 'Question'
   description?: string | null | undefined
   status?: QuestionStatus | null | undefined
+  viewerCanEdit?: boolean | null | undefined
+  viewerCanComment?: boolean | null | undefined
   reactionCount?: number | null | undefined
   viewerHasReacted?: boolean | null | undefined
+  id: string
+  title: string
+  createdAt: any
   author?:
     | {
         __typename: 'User'
@@ -596,15 +641,10 @@ export type QuestionsConnectionFragment = {
         cursor?: string | null | undefined
         node?:
           | {
-              __typename?: 'Question'
+              __typename: 'Question'
               id: string
-              createdAt: any
-              updatedAt?: any | null | undefined
               title: string
-              description?: string | null | undefined
-              status?: QuestionStatus | null | undefined
-              reactionCount?: number | null | undefined
-              viewerHasReacted?: boolean | null | undefined
+              createdAt: any
               author?:
                 | {
                     __typename: 'User'
@@ -626,30 +666,46 @@ export type QuestionsConnectionFragment = {
   >
 }
 
-export type StackInfoFragment = {
+export type StackCoreFragment = {
   __typename: 'Stack'
   id: string
-  createdAt: any
-  updatedAt?: any | null | undefined
   name: string
-  description?: string | null | undefined
-  url: string
   image?: string | null | undefined
-  reactionCount?: number | null | undefined
-  viewerHasReacted?: boolean | null | undefined
+  url: string
 }
 
-export type StackInfoWithTagsFragment = {
+export type StackListItemFragment = {
   __typename: 'Stack'
   id: string
-  createdAt: any
-  updatedAt?: any | null | undefined
   name: string
-  description?: string | null | undefined
-  url: string
   image?: string | null | undefined
+  url: string
+}
+
+export type StackDetailFragment = {
+  __typename: 'Stack'
+  createdAt: any
+  description?: string | null | undefined
   reactionCount?: number | null | undefined
   viewerHasReacted?: boolean | null | undefined
+  usedByViewer?: boolean | null | undefined
+  id: string
+  name: string
+  image?: string | null | undefined
+  url: string
+  usedBy: Array<
+    | {
+        __typename: 'User'
+        id: string
+        username?: string | null | undefined
+        avatar?: string | null | undefined
+        name?: string | null | undefined
+        role?: UserRole | null | undefined
+        isViewer?: boolean | null | undefined
+      }
+    | null
+    | undefined
+  >
   tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
 }
 
@@ -672,14 +728,9 @@ export type StacksConnectionFragment = {
           | {
               __typename: 'Stack'
               id: string
-              createdAt: any
-              updatedAt?: any | null | undefined
               name: string
-              description?: string | null | undefined
-              url: string
               image?: string | null | undefined
-              reactionCount?: number | null | undefined
-              viewerHasReacted?: boolean | null | undefined
+              url: string
             }
           | null
           | undefined
@@ -727,14 +778,14 @@ export type EditBookmarkMutation = {
   editBookmark?:
     | {
         __typename: 'Bookmark'
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         id: string
         url: string
         host: string
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
-        reactionCount?: number | null | undefined
-        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -759,14 +810,14 @@ export type AddBookmarkMutation = {
   addBookmark?:
     | {
         __typename: 'Bookmark'
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         id: string
         url: string
         host: string
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
-        reactionCount?: number | null | undefined
-        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -878,30 +929,16 @@ export type EditPostMutation = {
   __typename?: 'Mutation'
   editPost?:
     | {
-        __typename?: 'Post'
+        __typename: 'Post'
         text?: string | null | undefined
-        id: string
-        createdAt?: any | null | undefined
-        updatedAt?: any | null | undefined
-        publishedAt?: any | null | undefined
-        title?: string | null | undefined
-        slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
-        author?:
-          | {
-              __typename: 'User'
-              id: string
-              username?: string | null | undefined
-              avatar?: string | null | undefined
-              name?: string | null | undefined
-              role?: UserRole | null | undefined
-              isViewer?: boolean | null | undefined
-            }
-          | null
-          | undefined
+        id: string
+        publishedAt?: any | null | undefined
+        title?: string | null | undefined
+        slug?: string | null | undefined
       }
     | null
     | undefined
@@ -924,30 +961,16 @@ export type AddPostMutation = {
   __typename?: 'Mutation'
   addPost?:
     | {
-        __typename?: 'Post'
+        __typename: 'Post'
         text?: string | null | undefined
-        id: string
-        createdAt?: any | null | undefined
-        updatedAt?: any | null | undefined
-        publishedAt?: any | null | undefined
-        title?: string | null | undefined
-        slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
-        author?:
-          | {
-              __typename: 'User'
-              id: string
-              username?: string | null | undefined
-              avatar?: string | null | undefined
-              name?: string | null | undefined
-              role?: UserRole | null | undefined
-              isViewer?: boolean | null | undefined
-            }
-          | null
-          | undefined
+        id: string
+        publishedAt?: any | null | undefined
+        title?: string | null | undefined
+        slug?: string | null | undefined
       }
     | null
     | undefined
@@ -962,15 +985,16 @@ export type EditQuestionMutation = {
   __typename?: 'Mutation'
   editQuestion?:
     | {
-        __typename?: 'Question'
-        id: string
-        createdAt: any
-        updatedAt?: any | null | undefined
-        title: string
+        __typename: 'Question'
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        viewerCanEdit?: boolean | null | undefined
+        viewerCanComment?: boolean | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        id: string
+        title: string
+        createdAt: any
         author?:
           | {
               __typename: 'User'
@@ -1005,15 +1029,16 @@ export type AddQuestionMutation = {
   __typename?: 'Mutation'
   addQuestion?:
     | {
-        __typename?: 'Question'
-        id: string
-        createdAt: any
-        updatedAt?: any | null | undefined
-        title: string
+        __typename: 'Question'
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        viewerCanEdit?: boolean | null | undefined
+        viewerCanComment?: boolean | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        id: string
+        title: string
+        createdAt: any
         author?:
           | {
               __typename: 'User'
@@ -1078,15 +1103,28 @@ export type EditStackMutation = {
   editStack?:
     | {
         __typename: 'Stack'
-        id: string
         createdAt: any
-        updatedAt?: any | null | undefined
-        name: string
         description?: string | null | undefined
-        url: string
-        image?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        usedByViewer?: boolean | null | undefined
+        id: string
+        name: string
+        image?: string | null | undefined
+        url: string
+        usedBy: Array<
+          | {
+              __typename: 'User'
+              id: string
+              username?: string | null | undefined
+              avatar?: string | null | undefined
+              name?: string | null | undefined
+              role?: UserRole | null | undefined
+              isViewer?: boolean | null | undefined
+            }
+          | null
+          | undefined
+        >
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1111,15 +1149,28 @@ export type AddStackMutation = {
   addStack?:
     | {
         __typename: 'Stack'
-        id: string
         createdAt: any
-        updatedAt?: any | null | undefined
-        name: string
         description?: string | null | undefined
-        url: string
-        image?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        usedByViewer?: boolean | null | undefined
+        id: string
+        name: string
+        image?: string | null | undefined
+        url: string
+        usedBy: Array<
+          | {
+              __typename: 'User'
+              id: string
+              username?: string | null | undefined
+              avatar?: string | null | undefined
+              name?: string | null | undefined
+              role?: UserRole | null | undefined
+              isViewer?: boolean | null | undefined
+            }
+          | null
+          | undefined
+        >
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1134,8 +1185,11 @@ export type ToggleStackUserMutation = {
   __typename?: 'Mutation'
   toggleStackUser?:
     | {
-        __typename?: 'Stack'
+        __typename: 'Stack'
         id: string
+        name: string
+        image?: string | null | undefined
+        url: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1213,11 +1267,6 @@ export type GetBookmarksQuery = {
                 title?: string | null | undefined
                 description?: string | null | undefined
                 faviconUrl?: string | null | undefined
-                reactionCount?: number | null | undefined
-                viewerHasReacted?: boolean | null | undefined
-                tags: Array<
-                  { __typename?: 'Tag'; name: string } | null | undefined
-                >
               }
             | null
             | undefined
@@ -1237,14 +1286,14 @@ export type GetBookmarkQuery = {
   bookmark?:
     | {
         __typename: 'Bookmark'
+        reactionCount?: number | null | undefined
+        viewerHasReacted?: boolean | null | undefined
         id: string
         url: string
         host: string
         title?: string | null | undefined
         description?: string | null | undefined
         faviconUrl?: string | null | undefined
-        reactionCount?: number | null | undefined
-        viewerHasReacted?: boolean | null | undefined
         tags: Array<{ __typename?: 'Tag'; name: string } | null | undefined>
       }
     | null
@@ -1288,29 +1337,11 @@ export type GetPostsQuery = {
   __typename?: 'Query'
   posts: Array<
     | {
-        __typename?: 'Post'
+        __typename: 'Post'
         id: string
-        createdAt?: any | null | undefined
-        updatedAt?: any | null | undefined
         publishedAt?: any | null | undefined
         title?: string | null | undefined
         slug?: string | null | undefined
-        excerpt?: string | null | undefined
-        featureImage?: string | null | undefined
-        reactionCount?: number | null | undefined
-        viewerHasReacted?: boolean | null | undefined
-        author?:
-          | {
-              __typename: 'User'
-              id: string
-              username?: string | null | undefined
-              avatar?: string | null | undefined
-              name?: string | null | undefined
-              role?: UserRole | null | undefined
-              isViewer?: boolean | null | undefined
-            }
-          | null
-          | undefined
       }
     | null
     | undefined
@@ -1325,30 +1356,16 @@ export type GetPostQuery = {
   __typename?: 'Query'
   post?:
     | {
-        __typename?: 'Post'
+        __typename: 'Post'
         text?: string | null | undefined
-        id: string
-        createdAt?: any | null | undefined
-        updatedAt?: any | null | undefined
-        publishedAt?: any | null | undefined
-        title?: string | null | undefined
-        slug?: string | null | undefined
         excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
-        author?:
-          | {
-              __typename: 'User'
-              id: string
-              username?: string | null | undefined
-              avatar?: string | null | undefined
-              name?: string | null | undefined
-              role?: UserRole | null | undefined
-              isViewer?: boolean | null | undefined
-            }
-          | null
-          | undefined
+        id: string
+        publishedAt?: any | null | undefined
+        title?: string | null | undefined
+        slug?: string | null | undefined
       }
     | null
     | undefined
@@ -1379,15 +1396,10 @@ export type GetQuestionsQuery = {
           cursor?: string | null | undefined
           node?:
             | {
-                __typename?: 'Question'
+                __typename: 'Question'
                 id: string
-                createdAt: any
-                updatedAt?: any | null | undefined
                 title: string
-                description?: string | null | undefined
-                status?: QuestionStatus | null | undefined
-                reactionCount?: number | null | undefined
-                viewerHasReacted?: boolean | null | undefined
+                createdAt: any
                 author?:
                   | {
                       __typename: 'User'
@@ -1418,17 +1430,16 @@ export type GetQuestionQuery = {
   __typename?: 'Query'
   question?:
     | {
-        __typename?: 'Question'
-        viewerCanEdit?: boolean | null | undefined
-        viewerCanComment?: boolean | null | undefined
-        id: string
-        createdAt: any
-        updatedAt?: any | null | undefined
-        title: string
+        __typename: 'Question'
         description?: string | null | undefined
         status?: QuestionStatus | null | undefined
+        viewerCanEdit?: boolean | null | undefined
+        viewerCanComment?: boolean | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        id: string
+        title: string
+        createdAt: any
         author?:
           | {
               __typename: 'User'
@@ -1472,14 +1483,9 @@ export type GetStacksQuery = {
             | {
                 __typename: 'Stack'
                 id: string
-                createdAt: any
-                updatedAt?: any | null | undefined
                 name: string
-                description?: string | null | undefined
-                url: string
                 image?: string | null | undefined
-                reactionCount?: number | null | undefined
-                viewerHasReacted?: boolean | null | undefined
+                url: string
               }
             | null
             | undefined
@@ -1499,16 +1505,15 @@ export type GetStackQuery = {
   stack?:
     | {
         __typename: 'Stack'
-        usedByViewer?: boolean | null | undefined
-        id: string
         createdAt: any
-        updatedAt?: any | null | undefined
-        name: string
         description?: string | null | undefined
-        url: string
-        image?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
+        usedByViewer?: boolean | null | undefined
+        id: string
+        name: string
+        image?: string | null | undefined
+        url: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1607,8 +1612,8 @@ export type GetViewerWithSettingsQuery = {
     | undefined
 }
 
-export const BookmarkInfoFragmentDoc = gql`
-  fragment BookmarkInfo on Bookmark {
+export const BookmarkCoreFragmentDoc = gql`
+  fragment BookmarkCore on Bookmark {
     __typename
     id
     url
@@ -1616,18 +1621,24 @@ export const BookmarkInfoFragmentDoc = gql`
     title
     description
     faviconUrl
-    reactionCount
-    viewerHasReacted
   }
 `
-export const BookmarkInfoWithTagsFragmentDoc = gql`
-  fragment BookmarkInfoWithTags on Bookmark {
-    ...BookmarkInfo
+export const BookmarkDetailFragmentDoc = gql`
+  fragment BookmarkDetail on Bookmark {
+    ...BookmarkCore
+    reactionCount
+    viewerHasReacted
     tags {
       name
     }
   }
-  ${BookmarkInfoFragmentDoc}
+  ${BookmarkCoreFragmentDoc}
+`
+export const BookmarkListItemFragmentDoc = gql`
+  fragment BookmarkListItem on Bookmark {
+    ...BookmarkCore
+  }
+  ${BookmarkCoreFragmentDoc}
 `
 export const BookmarksConnectionFragmentDoc = gql`
   fragment BookmarksConnection on BookmarksConnection {
@@ -1639,11 +1650,11 @@ export const BookmarksConnectionFragmentDoc = gql`
     edges {
       cursor
       node {
-        ...BookmarkInfoWithTags
+        ...BookmarkListItem
       }
     }
   }
-  ${BookmarkInfoWithTagsFragmentDoc}
+  ${BookmarkListItemFragmentDoc}
 `
 export const UserInfoFragmentDoc = gql`
   fragment UserInfo on User {
@@ -1671,39 +1682,61 @@ export const CommentInfoFragmentDoc = gql`
   }
   ${UserInfoFragmentDoc}
 `
-export const PostInfoFragmentDoc = gql`
-  fragment PostInfo on Post {
+export const PostCoreFragmentDoc = gql`
+  fragment PostCore on Post {
+    __typename
     id
-    createdAt
-    updatedAt
     publishedAt
     title
     slug
+  }
+`
+export const PostListItemFragmentDoc = gql`
+  fragment PostListItem on Post {
+    ...PostCore
+  }
+  ${PostCoreFragmentDoc}
+`
+export const PostDetailFragmentDoc = gql`
+  fragment PostDetail on Post {
+    ...PostCore
+    text
     excerpt
     featureImage
     reactionCount
     viewerHasReacted
+  }
+  ${PostCoreFragmentDoc}
+`
+export const QuestionCoreFragmentDoc = gql`
+  fragment QuestionCore on Question {
+    __typename
+    id
+    title
+    createdAt
     author {
       ...UserInfo
     }
   }
   ${UserInfoFragmentDoc}
 `
-export const QuestionInfoFragmentDoc = gql`
-  fragment QuestionInfo on Question {
-    id
-    createdAt
-    updatedAt
-    title
+export const QuestionDetailFragmentDoc = gql`
+  fragment QuestionDetail on Question {
+    ...QuestionCore
     description
     status
+    viewerCanEdit
+    viewerCanComment
     reactionCount
     viewerHasReacted
-    author {
-      ...UserInfo
-    }
   }
-  ${UserInfoFragmentDoc}
+  ${QuestionCoreFragmentDoc}
+`
+export const QuestionListItemFragmentDoc = gql`
+  fragment QuestionListItem on Question {
+    ...QuestionCore
+  }
+  ${QuestionCoreFragmentDoc}
 `
 export const QuestionsConnectionFragmentDoc = gql`
   fragment QuestionsConnection on QuestionsConnection {
@@ -1715,34 +1748,44 @@ export const QuestionsConnectionFragmentDoc = gql`
     edges {
       cursor
       node {
-        ...QuestionInfo
+        ...QuestionListItem
       }
     }
   }
-  ${QuestionInfoFragmentDoc}
+  ${QuestionListItemFragmentDoc}
 `
-export const StackInfoFragmentDoc = gql`
-  fragment StackInfo on Stack {
+export const StackCoreFragmentDoc = gql`
+  fragment StackCore on Stack {
     __typename
     id
-    createdAt
-    updatedAt
     name
-    description
-    url
     image
-    reactionCount
-    viewerHasReacted
+    url
   }
 `
-export const StackInfoWithTagsFragmentDoc = gql`
-  fragment StackInfoWithTags on Stack {
-    ...StackInfo
+export const StackDetailFragmentDoc = gql`
+  fragment StackDetail on Stack {
+    ...StackCore
+    createdAt
+    description
+    reactionCount
+    viewerHasReacted
+    usedByViewer
+    usedBy {
+      ...UserInfo
+    }
     tags {
       name
     }
   }
-  ${StackInfoFragmentDoc}
+  ${StackCoreFragmentDoc}
+  ${UserInfoFragmentDoc}
+`
+export const StackListItemFragmentDoc = gql`
+  fragment StackListItem on Stack {
+    ...StackCore
+  }
+  ${StackCoreFragmentDoc}
 `
 export const StacksConnectionFragmentDoc = gql`
   fragment StacksConnection on StacksConnection {
@@ -1754,11 +1797,11 @@ export const StacksConnectionFragmentDoc = gql`
     edges {
       cursor
       node {
-        ...StackInfo
+        ...StackListItem
       }
     }
   }
-  ${StackInfoFragmentDoc}
+  ${StackListItemFragmentDoc}
 `
 export const UserSettingsFragmentDoc = gql`
   fragment UserSettings on User {
@@ -1773,10 +1816,10 @@ export const UserSettingsFragmentDoc = gql`
 export const EditBookmarkDocument = gql`
   mutation editBookmark($id: ID!, $data: EditBookmarkInput!) {
     editBookmark(id: $id, data: $data) {
-      ...BookmarkInfoWithTags
+      ...BookmarkDetail
     }
   }
-  ${BookmarkInfoWithTagsFragmentDoc}
+  ${BookmarkDetailFragmentDoc}
 `
 export type EditBookmarkMutationFn = Apollo.MutationFunction<
   EditBookmarkMutation,
@@ -1873,10 +1916,10 @@ export type DeleteBookmarkMutationOptions = Apollo.BaseMutationOptions<
 export const AddBookmarkDocument = gql`
   mutation addBookmark($data: AddBookmarkInput!) {
     addBookmark(data: $data) {
-      ...BookmarkInfoWithTags
+      ...BookmarkDetail
     }
   }
-  ${BookmarkInfoWithTagsFragmentDoc}
+  ${BookmarkDetailFragmentDoc}
 `
 export type AddBookmarkMutationFn = Apollo.MutationFunction<
   AddBookmarkMutation,
@@ -2129,11 +2172,10 @@ export type EditEmailSubscriptionMutationOptions = Apollo.BaseMutationOptions<
 export const EditPostDocument = gql`
   mutation editPost($id: ID!, $data: EditPostInput!) {
     editPost(id: $id, data: $data) {
-      ...PostInfo
-      text
+      ...PostDetail
     }
   }
-  ${PostInfoFragmentDoc}
+  ${PostDetailFragmentDoc}
 `
 export type EditPostMutationFn = Apollo.MutationFunction<
   EditPostMutation,
@@ -2226,11 +2268,10 @@ export type DeletePostMutationOptions = Apollo.BaseMutationOptions<
 export const AddPostDocument = gql`
   mutation addPost($data: AddPostInput!) {
     addPost(data: $data) {
-      ...PostInfo
-      text
+      ...PostDetail
     }
   }
-  ${PostInfoFragmentDoc}
+  ${PostDetailFragmentDoc}
 `
 export type AddPostMutationFn = Apollo.MutationFunction<
   AddPostMutation,
@@ -2275,10 +2316,10 @@ export type AddPostMutationOptions = Apollo.BaseMutationOptions<
 export const EditQuestionDocument = gql`
   mutation editQuestion($id: ID!, $data: EditQuestionInput!) {
     editQuestion(id: $id, data: $data) {
-      ...QuestionInfo
+      ...QuestionDetail
     }
   }
-  ${QuestionInfoFragmentDoc}
+  ${QuestionDetailFragmentDoc}
 `
 export type EditQuestionMutationFn = Apollo.MutationFunction<
   EditQuestionMutation,
@@ -2375,10 +2416,10 @@ export type DeleteQuestionMutationOptions = Apollo.BaseMutationOptions<
 export const AddQuestionDocument = gql`
   mutation addQuestion($data: AddQuestionInput!) {
     addQuestion(data: $data) {
-      ...QuestionInfo
+      ...QuestionDetail
     }
   }
-  ${QuestionInfoFragmentDoc}
+  ${QuestionDetailFragmentDoc}
 `
 export type AddQuestionMutationFn = Apollo.MutationFunction<
   AddQuestionMutation,
@@ -2497,10 +2538,10 @@ export type ToggleReactionMutationOptions = Apollo.BaseMutationOptions<
 export const EditStackDocument = gql`
   mutation editStack($id: ID!, $data: EditStackInput!) {
     editStack(id: $id, data: $data) {
-      ...StackInfoWithTags
+      ...StackDetail
     }
   }
-  ${StackInfoWithTagsFragmentDoc}
+  ${StackDetailFragmentDoc}
 `
 export type EditStackMutationFn = Apollo.MutationFunction<
   EditStackMutation,
@@ -2596,10 +2637,10 @@ export type DeleteStackMutationOptions = Apollo.BaseMutationOptions<
 export const AddStackDocument = gql`
   mutation addStack($data: AddStackInput!) {
     addStack(data: $data) {
-      ...StackInfoWithTags
+      ...StackDetail
     }
   }
-  ${StackInfoWithTagsFragmentDoc}
+  ${StackDetailFragmentDoc}
 `
 export type AddStackMutationFn = Apollo.MutationFunction<
   AddStackMutation,
@@ -2644,12 +2685,13 @@ export type AddStackMutationOptions = Apollo.BaseMutationOptions<
 export const ToggleStackUserDocument = gql`
   mutation toggleStackUser($id: ID!) {
     toggleStackUser(id: $id) {
-      id
+      ...StackCore
       usedBy {
         ...UserInfo
       }
     }
   }
+  ${StackCoreFragmentDoc}
   ${UserInfoFragmentDoc}
 `
 export type ToggleStackUserMutationFn = Apollo.MutationFunction<
@@ -2853,10 +2895,10 @@ export type GetBookmarksQueryResult = Apollo.QueryResult<
 export const GetBookmarkDocument = gql`
   query getBookmark($id: ID!) {
     bookmark(id: $id) {
-      ...BookmarkInfoWithTags
+      ...BookmarkDetail
     }
   }
-  ${BookmarkInfoWithTagsFragmentDoc}
+  ${BookmarkDetailFragmentDoc}
 `
 
 /**
@@ -2968,10 +3010,10 @@ export type GetCommentsQueryResult = Apollo.QueryResult<
 export const GetPostsDocument = gql`
   query getPosts {
     posts {
-      ...PostInfo
+      ...PostListItem
     }
   }
-  ${PostInfoFragmentDoc}
+  ${PostListItemFragmentDoc}
 `
 
 /**
@@ -3021,11 +3063,10 @@ export type GetPostsQueryResult = Apollo.QueryResult<
 export const GetPostDocument = gql`
   query getPost($slug: String!) {
     post(slug: $slug) {
-      ...PostInfo
-      text
+      ...PostDetail
     }
   }
-  ${PostInfoFragmentDoc}
+  ${PostDetailFragmentDoc}
 `
 
 /**
@@ -3132,12 +3173,10 @@ export type GetQuestionsQueryResult = Apollo.QueryResult<
 export const GetQuestionDocument = gql`
   query getQuestion($id: ID!) {
     question(id: $id) {
-      ...QuestionInfo
-      viewerCanEdit
-      viewerCanComment
+      ...QuestionDetail
     }
   }
-  ${QuestionInfoFragmentDoc}
+  ${QuestionDetailFragmentDoc}
 `
 
 /**
@@ -3246,15 +3285,10 @@ export type GetStacksQueryResult = Apollo.QueryResult<
 export const GetStackDocument = gql`
   query getStack($id: ID!) {
     stack(id: $id) {
-      ...StackInfoWithTags
-      usedByViewer
-      usedBy {
-        ...UserInfo
-      }
+      ...StackDetail
     }
   }
-  ${StackInfoWithTagsFragmentDoc}
-  ${UserInfoFragmentDoc}
+  ${StackDetailFragmentDoc}
 `
 
 /**
