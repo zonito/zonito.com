@@ -1325,6 +1325,15 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
+"@graphql-codegen/schema-ast@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/schema-ast/-/schema-ast-2.4.0.tgz#a41fdf2bacf88ec8318c78fdf03f19e620e5534a"
+  integrity sha512-xsLd4mF0H3mPp7Z2PHZ2Sv1KKIb/FOORqhDc9XHCnHJJ/h9nmaleKSTxTGzSUfIAQ1aCNzVilcaUwlenK+MMBQ==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.3.0"
+    "@graphql-tools/utils" "^8.1.1"
+    tslib "~2.3.0"
+
 "@graphql-codegen/typescript-operations@^2.1.8":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.2.0.tgz#73bf9261a9e28708952aa74c3a0c659fb8005483"
@@ -1336,10 +1345,10 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-react-apollo@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.0.tgz#671cba8bd5b3f99d8ba0e9737cc8b6bdbfbb2ae8"
-  integrity sha512-Oz0jnkmoXMO9jZWAoAFWZRSeJ8SCnqP5xFIAG/XR/eJrgp/DrY9AXs8mfOjg6K2Wq4KMhTbvjv+FNoVASB76Mw==
+"@graphql-codegen/typescript-react-apollo@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.1.tgz#a11aad061d6251ab38a9c2be08968e73cfcae1eb"
+  integrity sha512-fA99uAGwPxLVd8ANbdSkZTnalmSX2ScNQY7rBTzxhnHQWlheYWj22QBpVwO3gbGwQKMpHPnmlAZS0js5C/f4lQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.3.0"
     "@graphql-codegen/visitor-plugin-common" "2.5.0"
@@ -1353,6 +1362,17 @@
   integrity sha512-bsq+y0cyrltVfpK5/JVz90lMBFby/Q+4oxiFGpjVdAjv/dbS9Bu476tQlN0Es76fc88Ce25wD40JXKfgWQDqKw==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.3.0"
+    "@graphql-codegen/visitor-plugin-common" "2.5.0"
+    auto-bind "~4.0.0"
+    tslib "~2.3.0"
+
+"@graphql-codegen/typescript@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.3.1.tgz#ad557cc28f20aa8a9ad9f153c3c8ac8b6e09075a"
+  integrity sha512-5wfuJhXnDVdufznLZG2/YlPMy5qGVYAEodBACVT8Dfgnt7T8eQOdaTfEPh04hqf/WR6DDoiLrJDcdyqWUO305w==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.3.0"
+    "@graphql-codegen/schema-ast" "^2.4.0"
     "@graphql-codegen/visitor-plugin-common" "2.5.0"
     auto-bind "~4.0.0"
     tslib "~2.3.0"
@@ -1686,10 +1706,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.0.0.tgz#1ce019c9e470d7ad05cf0523ee9f606a2e460b65"
   integrity sha512-ztXvXG0dEHbWsOZZ2x443fVJK2QtVOhCU6QfmeJjnbmeYhiHhJ4sWOF2QFt0EgNTcyt6prLBVUFGQheW6Jc6lA==
 
-"@next/eslint-plugin-next@12.0.2", "@next/eslint-plugin-next@^12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-12.0.2.tgz#9dd96fbae043cf967572d805f3054b9f0aaf5b3a"
-  integrity sha512-mmMlik6cuTkcHFi6CTdLeX0aPUceBi6gP3/k9dxjMjpiTBL5qXO+zwsGmGyg01MeeSC3tJpUEqOZVnxaFvKccA==
+"@next/eslint-plugin-next@12.0.3", "@next/eslint-plugin-next@^12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-12.0.3.tgz#3945c251d551bacc3712d4a18d6ca56d2938f175"
+  integrity sha512-P7i+bMypneQcoRN+CX79xssvvIJCaw7Fndzbe7/lB0+LyRbVvGVyMUsFmLLbSxtZq4hvFMJ1p8wML/gsulMZWQ==
   dependencies:
     glob "7.1.7"
 
@@ -1808,7 +1828,7 @@
   resolved "https://registry.yarnpkg.com/@panva/asn1.js/-/asn1.js-1.0.0.tgz#dd55ae7b8129e02049f009408b97c61ccf9032f6"
   integrity sha512-UdkG3mLEqXgnlKsWanWcgb6dOjUzJ+XC5f+aWw30qrtjxeNUSfKX1cd5FBzOaXQumoe9nIqeZUvrRJS03HCCtw==
 
-"@prisma/client@3.4.1":
+"@prisma/client@^3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@prisma/client/-/client-3.4.1.tgz#046974f6a27c6930d6858f22fc50841d6219f191"
   integrity sha512-tUlPSyGiZfmt9xTtvZK8d8cqu76QLCM+rFt7+ezpau/G0VwzetuGVmT28c61Eaw7OW2KmsTHRk8LUxI7HZS3kA==
@@ -2286,10 +2306,10 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react@^17.0.33":
-  version "17.0.33"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.33.tgz#e01ae3de7613dac1094569880bb3792732203ad5"
-  integrity sha512-pLWntxXpDPaU+RTAuSGWGSEL2FRTNyRQOjSWDke/rxRg14ncsZvx8AKWMWZqvc1UOaJIAoObdZhAWvRaHFi5rw==
+"@types/react@^17.0.34":
+  version "17.0.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.34.tgz#797b66d359b692e3f19991b6b07e4b0c706c0102"
+  integrity sha512-46FEGrMjc2+8XhHXILr+3+/sTe3OfzSPU9YGKILLrUYbQ1CLQC9Daqo1KzENGXAWwrFwiY0l4ZbF20gRvgpWTg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2906,10 +2926,10 @@ apollo-server-caching@^0.7.0:
   dependencies:
     lru-cache "^6.0.0"
 
-apollo-server-core@^2.25.2:
-  version "2.25.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.25.2.tgz#ff65da5e512d9b5ca54c8e5e8c78ee28b5987247"
-  integrity sha512-lrohEjde2TmmDTO7FlOs8x5QQbAS0Sd3/t0TaK2TWaodfzi92QAvIsq321Mol6p6oEqmjm8POIDHW1EuJd7XMA==
+apollo-server-core@^2.25.3:
+  version "2.25.3"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.25.3.tgz#1a649fd14b3928f5b6e65f0002b380fcfde56862"
+  integrity sha512-Midow3uZoJ9TjFNeCNSiWElTVZlvmB7G7tG6PPoxIR9Px90/v16Q6EzunDIO0rTJHRC3+yCwZkwtf8w2AcP0sA==
   dependencies:
     "@apollographql/apollo-tools" "^0.5.0"
     "@apollographql/graphql-playground-html" "1.6.27"
@@ -2950,14 +2970,14 @@ apollo-server-errors@^2.5.0:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.5.0.tgz#5d1024117c7496a2979e3e34908b5685fe112b68"
   integrity sha512-lO5oTjgiC3vlVg2RKr3RiXIIQ5pGXBFxYGGUkKDhTud3jMIhs+gel8L8zsEjKaKxkjHhCQAA/bcEfYiKkGQIvA==
 
-apollo-server-micro@^2.25.2:
-  version "2.25.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-micro/-/apollo-server-micro-2.25.2.tgz#4882a886417ba260abb28aa18a44e9f0490df9e7"
-  integrity sha512-TaYHe82Nki4dOxpIEbWi1cNkTvm2JBQX7biluXOTjSyKXrT8/URec4rJrbwOyF56KQ7Td96gkUDJZHBYZ49Vzg==
+apollo-server-micro@^2.25.3:
+  version "2.25.3"
+  resolved "https://registry.yarnpkg.com/apollo-server-micro/-/apollo-server-micro-2.25.3.tgz#c912bd87ef4bb16e6088ba76e55048ca166d724a"
+  integrity sha512-nQ2LspMYcK0B+6+dn3NCqIX9FRoAJ1Z2WtPKeBSI78R+GUQ3hpRPnekcTZs0c1rMusjJ4ku+dKKE9sdYdX5H3A==
   dependencies:
     "@apollographql/graphql-playground-html" "1.6.27"
     accept "^3.0.2"
-    apollo-server-core "^2.25.2"
+    apollo-server-core "^2.25.3"
     apollo-server-types "^0.9.0"
     micro "^9.3.2"
 
@@ -5093,12 +5113,12 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz#4683126b500b61762f2dbebace1806e8be31b1c8"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-config-next@^12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.0.2.tgz#87ea50cf062d5701294948182cea9217ac0a45a4"
-  integrity sha512-Tck3Ga3IQ+/6ziTraLc1CTQ9kw2jWzjgZtB6wsBOAvMauK25a/ociCW8SFXsYWVFb899tdqPemrTZEeXjXjrvQ==
+eslint-config-next@^12.0.3:
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.0.3.tgz#a85ad423997f098b41b61c279472e0642e200a9e"
+  integrity sha512-q+mX6jhk3HrCo39G18MLhiC6f8zJnTA00f30RSuVUWsv45SQUm6r62oXVqrbAgMEybe0yx/GDRvfA6LvSolw6Q==
   dependencies:
-    "@next/eslint-plugin-next" "12.0.2"
+    "@next/eslint-plugin-next" "12.0.3"
     "@rushstack/eslint-patch" "^1.0.6"
     "@typescript-eslint/parser" "^4.20.0"
     eslint-import-resolver-node "^0.3.4"
@@ -5839,14 +5859,14 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.0.2.tgz#968ac1815eab9ac9b6ae4b83010f88d023376b98"
-  integrity sha512-9noBJ3CxSE8MCe0Dj0MqCXBnPFjaOMyx4q6zqV3CWqvsPZSUxsyUaF6Ds3FhFOAABQFesFYCX968Wf48Lalztw==
+framer-motion@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.2.1.tgz#5cfa59984649d73e3741d7bf189918f34fd3635e"
+  integrity sha512-igeMZaa0FnaB4NkCE+/ENGSuSvhRhUVFJCwWg/FGQn+CwnLPI/XjO6Zim8m+pN+4wBNlaesBRpqOQbq/VH7mew==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
-    popmotion "10.0.2"
+    popmotion "11.0.0"
     style-value-types "5.0.0"
     tslib "^2.1.0"
   optionalDependencies:
@@ -9507,10 +9527,10 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-popmotion@10.0.2:
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-10.0.2.tgz#edb87efb2ba39505d07f79d3ca8cc4b1cbe101bf"
-  integrity sha512-8vgx02LL7Odk/kwSGigAnlPRLJK+Dfked571ZAHGzkxPNWThkU5mQX0xPmibIMAULZehWBV7hGN7LSCpaV3cfw==
+popmotion@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-11.0.0.tgz#910e2e7077d9aeba520db8744d40bb5354992212"
+  integrity sha512-kJDyaG00TtcANP5JZ51od+DCqopxBm2a/Txh3Usu23L9qntjY5wumvcVf578N8qXEHR1a+jx9XCv8zOntdYalQ==
   dependencies:
     framesync "^6.0.1"
     hey-listen "^1.0.8"
@@ -9930,10 +9950,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-prisma@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.3.0.tgz#3231dd37ff8516b617ed77422190cca5237db68c"
-  integrity sha512-axCTxDHYc7PBJQfW1Flda1Uo5g0tev0xyFKWZyRqKi56jlAod+xSuV4nCdcWJGQKsgFuzTNIrU0fAJCtXwSSHQ==
+prettier-plugin-prisma@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.4.1.tgz#37e6442b3d261b1179b32c0c033e3b0a35e3f3c6"
+  integrity sha512-SwDSPwD9H6P5gtqUyavNyZjFuR8HeKE+yOikTBS8XkrHvgOZv1KKJiFU/Jcdf9Ds705LMMGhI4mBrsfwkDcJYA==
 
 prettier@^2.0.0, prettier@^2.4.1:
   version "2.4.1"
@@ -10552,10 +10572,10 @@ relay-runtime@12.0.0:
     fbjs "^3.0.0"
     invariant "^2.2.4"
 
-remark-gfm@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/remark-gfm/-/remark-gfm-3.0.0.tgz#a2efb06eceb8472610f095ccbff82d17daa1f415"
-  integrity sha512-CXJw5h1iwUW6czFwi4tveoOSlsEZU44hcdNzUxC5uiNi7r/OQySf46AoEihM8/NwBbW1LcsnyGIsHBnbURFw2g==
+remark-gfm@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/remark-gfm/-/remark-gfm-3.0.1.tgz#0b180f095e3036545e9dddac0e8df3fa5cfee54f"
+  integrity sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig==
   dependencies:
     "@types/mdast" "^3.0.0"
     mdast-util-gfm "^2.0.0"
@@ -10827,10 +10847,10 @@ remark-preset-lint-recommended@^6.1.1:
     remark-lint-ordered-list-marker-style "^3.0.0"
     unified "^10.0.0"
 
-remark-rehype@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/remark-rehype/-/remark-rehype-10.0.0.tgz#e45f07701b766a4e958fb7a843e19836082c4290"
-  integrity sha512-WgvJFpfRLfnyHGvQaMgLXVfaXIXVA9FFo7tSky0omLLukZvDJdobZ2V/wYGd2xlScPVZNx6/99fb5kLFT2uFWQ==
+remark-rehype@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/remark-rehype/-/remark-rehype-10.0.1.tgz#f52079aeecb3f209d682b331c052457106e3015e"
+  integrity sha512-9itJLLOrbjrAi0qO5Rh0Wzi1d3eqvRvDWSsfif6W/BInVgCvzqSnB7BSfQRtb6MLfQiufXYG3NbbUqfE0p7nTA==
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/mdast" "^3.0.0"
@@ -11330,10 +11350,10 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-slugify@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.1.tgz#a5fcaef29f4e57c6e932ce7044b6ffd9cf81b641"
-  integrity sha512-5ofqMTbetNhxlzjYYLBaZFQd6oiTuSkQlyfPEFIMwgUABlZQ0hbk5xIV9Ydd5jghWeRoO7GkiJliUvTpLOjNRA==
+slugify@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.2.tgz#4cb97220a2278e1b86fb017c6da668e6a865354c"
+  integrity sha512-XMtI8qD84LwCpthLMBHlIhcrj10cgA+U/Ot8G6FD6uFuWZtMfKK75JO7l81nzpFJsPlsW6LT+VKqWQJW3+6New==
 
 snake-case@^3.0.4:
   version "3.0.4"

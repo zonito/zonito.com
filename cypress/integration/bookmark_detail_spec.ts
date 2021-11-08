@@ -3,7 +3,7 @@
 
 describe('Bookmark detail', () => {
   before(() => {
-    cy.visit('/bookmarks/ckv43l07e0000w2aad139v4o1')
+    cy.visit('/bookmarks/ckvoxayqf000409l0iwof9brd')
   })
 
   it('should render bookmarks list', () => {
