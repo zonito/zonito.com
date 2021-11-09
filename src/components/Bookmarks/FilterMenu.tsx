@@ -15,7 +15,7 @@ export function BookmarksFilterMenu() {
 
   const { tags } = data
 
-  const allowedTags = ['website', 'reading', 'portfolio']
+  const allowedTags = ['website', 'reading', 'productivity']
 
   const filtered = tags.filter((t) => allowedTags.indexOf(t.name) >= 0)
 

@@ -80,7 +80,7 @@ export function AddBookmarkForm({ closeModal }) {
   }
 
   const tagFilter = (t) => {
-    const allowedBookmarkTags = ['website', 'reading', 'portfolio']
+    const allowedBookmarkTags = ['website', 'reading', 'productivity']
     return allowedBookmarkTags.indexOf(t.name) >= 0
   }
 

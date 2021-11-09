@@ -156,11 +156,13 @@ export type Mutation = {
   addPost?: Maybe<Post>
   addQuestion?: Maybe<Question>
   addStack?: Maybe<Stack>
+  addTag?: Maybe<Tag>
   deleteBookmark?: Maybe<Scalars['Boolean']>
   deleteComment?: Maybe<Scalars['Boolean']>
   deletePost?: Maybe<Scalars['Boolean']>
   deleteQuestion?: Maybe<Scalars['Boolean']>
   deleteStack?: Maybe<Scalars['Boolean']>
+  deleteTag?: Maybe<Scalars['Boolean']>
   deleteUser?: Maybe<Scalars['Boolean']>
   editBookmark?: Maybe<Bookmark>
   editComment?: Maybe<Comment>
@@ -195,6 +197,10 @@ export type MutationAddStackArgs = {
   data: AddStackInput
 }
 
+export type MutationAddTagArgs = {
+  name: Scalars['String']
+}
+
 export type MutationDeleteBookmarkArgs = {
   id: Scalars['ID']
 }
@@ -212,6 +218,10 @@ export type MutationDeleteQuestionArgs = {
 }
 
 export type MutationDeleteStackArgs = {
+  id: Scalars['ID']
+}
+
+export type MutationDeleteTagArgs = {
   id: Scalars['ID']
 }
 
@@ -1206,6 +1216,24 @@ export type ToggleStackUserMutation = {
       }
     | null
     | undefined
+}
+
+export type AddTagMutationVariables = Exact<{
+  name: Scalars['String']
+}>
+
+export type AddTagMutation = {
+  __typename?: 'Mutation'
+  addTag?: { __typename?: 'Tag'; name: string } | null | undefined
+}
+
+export type DeleteTagMutationVariables = Exact<{
+  id: Scalars['ID']
+}>
+
+export type DeleteTagMutation = {
+  __typename?: 'Mutation'
+  deleteTag?: boolean | null | undefined
 }
 
 export type DeleteUserMutationVariables = Exact<{ [key: string]: never }>
@@ -2736,6 +2764,100 @@ export type ToggleStackUserMutationResult =
 export type ToggleStackUserMutationOptions = Apollo.BaseMutationOptions<
   ToggleStackUserMutation,
   ToggleStackUserMutationVariables
+>
+export const AddTagDocument = gql`
+  mutation addTag($name: String!) {
+    addTag(name: $name) {
+      name
+    }
+  }
+`
+export type AddTagMutationFn = Apollo.MutationFunction<
+  AddTagMutation,
+  AddTagMutationVariables
+>
+
+/**
+ * __useAddTagMutation__
+ *
+ * To run a mutation, you first call `useAddTagMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddTagMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addTagMutation, { data, loading, error }] = useAddTagMutation({
+ *   variables: {
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useAddTagMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    AddTagMutation,
+    AddTagMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<AddTagMutation, AddTagMutationVariables>(
+    AddTagDocument,
+    options
+  )
+}
+export type AddTagMutationHookResult = ReturnType<typeof useAddTagMutation>
+export type AddTagMutationResult = Apollo.MutationResult<AddTagMutation>
+export type AddTagMutationOptions = Apollo.BaseMutationOptions<
+  AddTagMutation,
+  AddTagMutationVariables
+>
+export const DeleteTagDocument = gql`
+  mutation deleteTag($id: ID!) {
+    deleteTag(id: $id)
+  }
+`
+export type DeleteTagMutationFn = Apollo.MutationFunction<
+  DeleteTagMutation,
+  DeleteTagMutationVariables
+>
+
+/**
+ * __useDeleteTagMutation__
+ *
+ * To run a mutation, you first call `useDeleteTagMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteTagMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteTagMutation, { data, loading, error }] = useDeleteTagMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteTagMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteTagMutation,
+    DeleteTagMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<DeleteTagMutation, DeleteTagMutationVariables>(
+    DeleteTagDocument,
+    options
+  )
+}
+export type DeleteTagMutationHookResult = ReturnType<
+  typeof useDeleteTagMutation
+>
+export type DeleteTagMutationResult = Apollo.MutationResult<DeleteTagMutation>
+export type DeleteTagMutationOptions = Apollo.BaseMutationOptions<
+  DeleteTagMutation,
+  DeleteTagMutationVariables
 >
 export const DeleteUserDocument = gql`
   mutation deleteUser {

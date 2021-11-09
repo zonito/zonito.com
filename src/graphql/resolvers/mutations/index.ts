@@ -29,6 +29,7 @@ import {
   toggleStackUser,
 } from '~/graphql/resolvers/mutations/stack'
 import { deleteUser, editUser } from '~/graphql/resolvers/mutations/user'
+import { addTag, deleteTag } from './tag'
 
 export default {
   addBookmark: requiresAdmin(addBookmark),
@@ -51,4 +52,6 @@ export default {
   editPost: requiresAdmin(editPost),
   deletePost: requiresAdmin(deletePost),
   toggleReaction: requiresUser(toggleReaction),
+  addTag: requiresAdmin(addTag),
+  deleteTag: requiresAdmin(deleteTag),
 }

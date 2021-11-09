@@ -258,6 +258,8 @@ export default gql`
   union Reactable = Bookmark | Question | Post | Stack
 
   type Mutation {
+    addTag(name: String!): Tag
+    deleteTag(id: ID!): Boolean
     addBookmark(data: AddBookmarkInput!): Bookmark
     editBookmark(id: ID!, data: EditBookmarkInput!): Bookmark
     deleteBookmark(id: ID!): Boolean

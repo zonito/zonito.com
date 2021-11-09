@@ -30,7 +30,7 @@ export function Tag({ name }) {
           'border-green-200 text-green-600 dark:text-green-200  bg-green-500 bg-opacity-5 dark:bg-opacity-10'
         break
       }
-      case 'portfolio': {
+      case 'productivity': {
         specificClasses =
           'border-blue-200 text-blue-600 dark:text-blue-200 bg-blue-500 bg-opacity-5 dark:bg-opacity-10'
         break
