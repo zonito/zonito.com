@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import * as React from 'react'
 
 import { Avatar } from '~/components/Avatar'
@@ -120,10 +119,10 @@ export const Comment = React.memo(function MemoComment({
           />
           <div className="flex space-x-1">
             <span className="font-semibold leading-snug whitespace-nowrap text-primary">
-                {comment.author.name}
+              {comment.author.name}
             </span>
             <span className="inline-flex font-normal leading-snug line-clamp-1 text-tertiary">
-                @{comment.author.username}
+              @{comment.author.username}
             </span>
             <p className="leading-snug text-quaternary">·</p>
             <p
@@ -147,7 +146,7 @@ export const Comment = React.memo(function MemoComment({
       {isEditing ? (
         <div className="flex flex-col space-y-3 pl-14">
           <Textarea
-            onChange={(e) => setEditText(e.target.value)}
+            onChange={(e: any) => setEditText(e.target.value)}
             value={editText}
             onKeyDown={onKeyDown}
           />
