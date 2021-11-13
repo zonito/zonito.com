@@ -119,14 +119,17 @@ export const Comment = React.memo(function MemoComment({
             className="rounded-full"
           />
           <div className="flex space-x-1">
-            <span className="font-semibold leading-snug text-primary">
-              {comment.author.name}
+            <span className="font-semibold leading-snug whitespace-nowrap text-primary">
+                {comment.author.name}
             </span>
-            <span className="inline-flex font-normal leading-snug text-tertiary">
-              @{comment.author.username}
+            <span className="inline-flex font-normal leading-snug line-clamp-1 text-tertiary">
+                @{comment.author.username}
             </span>
             <p className="leading-snug text-quaternary">·</p>
-            <p className="leading-snug text-quaternary" title={createdAt.raw}>
+            <p
+              className="leading-snug text-quaternary line-clamp-1"
+              title={createdAt.raw}
+            >
               {createdAt.formatted}
             </p>
           </div>

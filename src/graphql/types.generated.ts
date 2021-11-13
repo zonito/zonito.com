@@ -110,6 +110,7 @@ export type EditBookmarkInput = {
 
 export type EditPostInput = {
   excerpt?: Maybe<Scalars['String']>
+  published?: Maybe<Scalars['Boolean']>
   slug: Scalars['String']
   text: Scalars['String']
   title: Scalars['String']
@@ -331,9 +332,7 @@ export type QueryPostArgs = {
 }
 
 export type QueryPostsArgs = {
-  filter?: Maybe<Scalars['String']>
-  first?: Maybe<Scalars['Int']>
-  order?: Maybe<Scalars['String']>
+  filter?: Maybe<WritingFilter>
 }
 
 export type QueryQuestionArgs = {
@@ -455,6 +454,10 @@ export enum UserRole {
   Admin = 'ADMIN',
   Blocked = 'BLOCKED',
   User = 'USER',
+}
+
+export type WritingFilter = {
+  published?: Maybe<Scalars['Boolean']>
 }
 
 export type BookmarkCoreFragment = {
@@ -1359,7 +1362,9 @@ export type GetCommentsQuery = {
   >
 }
 
-export type GetPostsQueryVariables = Exact<{ [key: string]: never }>
+export type GetPostsQueryVariables = Exact<{
+  filter?: Maybe<WritingFilter>
+}>
 
 export type GetPostsQuery = {
   __typename?: 'Query'
@@ -3130,8 +3135,8 @@ export type GetCommentsQueryResult = Apollo.QueryResult<
   GetCommentsQueryVariables
 >
 export const GetPostsDocument = gql`
-  query getPosts {
-    posts {
+  query getPosts($filter: WritingFilter) {
+    posts(filter: $filter) {
       ...PostListItem
     }
   }
@@ -3150,6 +3155,7 @@ export const GetPostsDocument = gql`
  * @example
  * const { data, loading, error } = useGetPostsQuery({
  *   variables: {
+ *      filter: // value for 'filter'
  *   },
  * });
  */

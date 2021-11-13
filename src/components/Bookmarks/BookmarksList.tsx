@@ -48,6 +48,7 @@ export function BookmarksList() {
     })
   }
 
+  // scroll to the top of the list whenever the filters are changed
   React.useEffect(() => {
     if (scrollContainerRef?.current) scrollContainerRef.current.scrollTo(0, 0)
   }, [tag])
@@ -56,6 +57,7 @@ export function BookmarksList() {
     if (isVisible) handleFetchMore()
   }, [isVisible])
 
+  // if a user is linked to /bookmarks?tag=foo, clear the query filter but stay on the same page
   React.useEffect(() => {
     if (tagQuery) router.push(router.pathname, { query: null })
   }, [tagQuery])
