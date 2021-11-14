@@ -73,6 +73,7 @@ export default gql`
     description: String
     image: String
     url: String!
+    slug: String!
     tags: [Tag]!
     usedBy: [User]!
     usedByViewer: Boolean
@@ -181,7 +182,7 @@ export default gql`
       after: String
       filter: BookmarkFilter
     ): BookmarksConnection!
-    stack(id: ID!): Stack
+    stack(slug: String!): Stack
     stacks(first: Int, after: String): StacksConnection!
     comment(id: ID!): Comment
     comments(refId: ID!, type: CommentType!): [Comment]!
@@ -230,9 +231,9 @@ export default gql`
 
   input EditBookmarkInput {
     title: String!
-    description: String!
-    tag: String!
-    faviconUrl: String!
+    description: String
+    tag: String
+    faviconUrl: String
   }
 
   input EditQuestionInput {

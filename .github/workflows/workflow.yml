@@ -11,7 +11,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         env:
-          CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url }}
+          CYPRESS_BASE_URL: https://zonito.com
       - name: Cypress tests ✅
         if: ${{ success() }}
         run: |

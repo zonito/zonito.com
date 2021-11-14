@@ -102,9 +102,9 @@ export enum CommentType {
 }
 
 export type EditBookmarkInput = {
-  description: Scalars['String']
-  faviconUrl: Scalars['String']
-  tag: Scalars['String']
+  description?: Maybe<Scalars['String']>
+  faviconUrl?: Maybe<Scalars['String']>
+  tag?: Maybe<Scalars['String']>
   title: Scalars['String']
 }
 
@@ -346,7 +346,7 @@ export type QueryQuestionsArgs = {
 }
 
 export type QueryStackArgs = {
-  id: Scalars['ID']
+  slug: Scalars['String']
 }
 
 export type QueryStacksArgs = {
@@ -411,6 +411,7 @@ export type Stack = {
   image?: Maybe<Scalars['String']>
   name: Scalars['String']
   reactionCount?: Maybe<Scalars['Int']>
+  slug: Scalars['String']
   tags: Array<Maybe<Tag>>
   updatedAt?: Maybe<Scalars['Date']>
   url: Scalars['String']
@@ -551,6 +552,7 @@ export type PostCoreFragment = {
   publishedAt?: any | null | undefined
   title?: string | null | undefined
   slug?: string | null | undefined
+  excerpt?: string | null | undefined
 }
 
 export type PostListItemFragment = {
@@ -559,12 +561,12 @@ export type PostListItemFragment = {
   publishedAt?: any | null | undefined
   title?: string | null | undefined
   slug?: string | null | undefined
+  excerpt?: string | null | undefined
 }
 
 export type PostDetailFragment = {
   __typename: 'Post'
   text?: string | null | undefined
-  excerpt?: string | null | undefined
   featureImage?: string | null | undefined
   reactionCount?: number | null | undefined
   viewerHasReacted?: boolean | null | undefined
@@ -572,6 +574,7 @@ export type PostDetailFragment = {
   publishedAt?: any | null | undefined
   title?: string | null | undefined
   slug?: string | null | undefined
+  excerpt?: string | null | undefined
 }
 
 export type QuestionCoreFragment = {
@@ -685,6 +688,7 @@ export type StackCoreFragment = {
   name: string
   image?: string | null | undefined
   url: string
+  slug: string
 }
 
 export type StackListItemFragment = {
@@ -693,6 +697,7 @@ export type StackListItemFragment = {
   name: string
   image?: string | null | undefined
   url: string
+  slug: string
 }
 
 export type StackDetailFragment = {
@@ -706,6 +711,7 @@ export type StackDetailFragment = {
   name: string
   image?: string | null | undefined
   url: string
+  slug: string
   usedBy: Array<
     | {
         __typename: 'User'
@@ -744,6 +750,7 @@ export type StacksConnectionFragment = {
               name: string
               image?: string | null | undefined
               url: string
+              slug: string
             }
           | null
           | undefined
@@ -944,7 +951,6 @@ export type EditPostMutation = {
     | {
         __typename: 'Post'
         text?: string | null | undefined
-        excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
@@ -952,6 +958,7 @@ export type EditPostMutation = {
         publishedAt?: any | null | undefined
         title?: string | null | undefined
         slug?: string | null | undefined
+        excerpt?: string | null | undefined
       }
     | null
     | undefined
@@ -976,7 +983,6 @@ export type AddPostMutation = {
     | {
         __typename: 'Post'
         text?: string | null | undefined
-        excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
@@ -984,6 +990,7 @@ export type AddPostMutation = {
         publishedAt?: any | null | undefined
         title?: string | null | undefined
         slug?: string | null | undefined
+        excerpt?: string | null | undefined
       }
     | null
     | undefined
@@ -1125,6 +1132,7 @@ export type EditStackMutation = {
         name: string
         image?: string | null | undefined
         url: string
+        slug: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1171,6 +1179,7 @@ export type AddStackMutation = {
         name: string
         image?: string | null | undefined
         url: string
+        slug: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1203,6 +1212,7 @@ export type ToggleStackUserMutation = {
         name: string
         image?: string | null | undefined
         url: string
+        slug: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1375,6 +1385,7 @@ export type GetPostsQuery = {
         publishedAt?: any | null | undefined
         title?: string | null | undefined
         slug?: string | null | undefined
+        excerpt?: string | null | undefined
       }
     | null
     | undefined
@@ -1391,7 +1402,6 @@ export type GetPostQuery = {
     | {
         __typename: 'Post'
         text?: string | null | undefined
-        excerpt?: string | null | undefined
         featureImage?: string | null | undefined
         reactionCount?: number | null | undefined
         viewerHasReacted?: boolean | null | undefined
@@ -1399,6 +1409,7 @@ export type GetPostQuery = {
         publishedAt?: any | null | undefined
         title?: string | null | undefined
         slug?: string | null | undefined
+        excerpt?: string | null | undefined
       }
     | null
     | undefined
@@ -1519,6 +1530,7 @@ export type GetStacksQuery = {
                 name: string
                 image?: string | null | undefined
                 url: string
+                slug: string
               }
             | null
             | undefined
@@ -1530,7 +1542,7 @@ export type GetStacksQuery = {
 }
 
 export type GetStackQueryVariables = Exact<{
-  id: Scalars['ID']
+  slug: Scalars['String']
 }>
 
 export type GetStackQuery = {
@@ -1547,6 +1559,7 @@ export type GetStackQuery = {
         name: string
         image?: string | null | undefined
         url: string
+        slug: string
         usedBy: Array<
           | {
               __typename: 'User'
@@ -1722,6 +1735,7 @@ export const PostCoreFragmentDoc = gql`
     publishedAt
     title
     slug
+    excerpt
   }
 `
 export const PostListItemFragmentDoc = gql`
@@ -1734,7 +1748,6 @@ export const PostDetailFragmentDoc = gql`
   fragment PostDetail on Post {
     ...PostCore
     text
-    excerpt
     featureImage
     reactionCount
     viewerHasReacted
@@ -1794,6 +1807,7 @@ export const StackCoreFragmentDoc = gql`
     name
     image
     url
+    slug
   }
 `
 export const StackDetailFragmentDoc = gql`
@@ -3411,8 +3425,8 @@ export type GetStacksQueryResult = Apollo.QueryResult<
   GetStacksQueryVariables
 >
 export const GetStackDocument = gql`
-  query getStack($id: ID!) {
-    stack(id: $id) {
+  query getStack($slug: String!) {
+    stack(slug: $slug) {
       ...StackDetail
     }
   }
@@ -3431,7 +3445,7 @@ export const GetStackDocument = gql`
  * @example
  * const { data, loading, error } = useGetStackQuery({
  *   variables: {
- *      id: // value for 'id'
+ *      slug: // value for 'slug'
  *   },
  * });
  */
