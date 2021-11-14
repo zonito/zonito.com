@@ -6,6 +6,8 @@ jobs:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
+      - name: Echo BaseURL
+        run: echo "${{ github.event.deployment_status.target_url }}"
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress
