@@ -444,6 +444,7 @@ export type User = {
   email?: Maybe<Scalars['String']>
   emailSubscriptions?: Maybe<Array<Maybe<EmailSubscription>>>
   id: Scalars['ID']
+  isAdmin?: Maybe<Scalars['Boolean']>
   isViewer?: Maybe<Scalars['Boolean']>
   name?: Maybe<Scalars['String']>
   pendingEmail?: Maybe<Scalars['String']>
@@ -543,6 +544,7 @@ export type CommentInfoFragment = {
     name?: string | null | undefined
     role?: UserRole | null | undefined
     isViewer?: boolean | null | undefined
+    isAdmin?: boolean | null | undefined
   }
 }
 
@@ -591,6 +593,7 @@ export type QuestionCoreFragment = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -610,6 +613,7 @@ export type QuestionListItemFragment = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -635,6 +639,7 @@ export type QuestionDetailFragment = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -670,6 +675,7 @@ export type QuestionsConnectionFragment = {
                     name?: string | null | undefined
                     role?: UserRole | null | undefined
                     isViewer?: boolean | null | undefined
+                    isAdmin?: boolean | null | undefined
                   }
                 | null
                 | undefined
@@ -721,6 +727,7 @@ export type StackDetailFragment = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -768,6 +775,7 @@ export type UserInfoFragment = {
   name?: string | null | undefined
   role?: UserRole | null | undefined
   isViewer?: boolean | null | undefined
+  isAdmin?: boolean | null | undefined
 }
 
 export type UserSettingsFragment = {
@@ -869,6 +877,7 @@ export type AddCommentMutation = {
           name?: string | null | undefined
           role?: UserRole | null | undefined
           isViewer?: boolean | null | undefined
+          isAdmin?: boolean | null | undefined
         }
       }
     | null
@@ -899,6 +908,7 @@ export type EditCommentMutation = {
           name?: string | null | undefined
           role?: UserRole | null | undefined
           isViewer?: boolean | null | undefined
+          isAdmin?: boolean | null | undefined
         }
       }
     | null
@@ -1024,6 +1034,7 @@ export type EditQuestionMutation = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1068,6 +1079,7 @@ export type AddQuestionMutation = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1142,6 +1154,7 @@ export type EditStackMutation = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1189,6 +1202,7 @@ export type AddStackMutation = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1222,6 +1236,7 @@ export type ToggleStackUserMutation = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1271,6 +1286,7 @@ export type EditUserMutation = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -1365,6 +1381,7 @@ export type GetCommentsQuery = {
           name?: string | null | undefined
           role?: UserRole | null | undefined
           isViewer?: boolean | null | undefined
+          isAdmin?: boolean | null | undefined
         }
       }
     | null
@@ -1453,6 +1470,7 @@ export type GetQuestionsQuery = {
                       name?: string | null | undefined
                       role?: UserRole | null | undefined
                       isViewer?: boolean | null | undefined
+                      isAdmin?: boolean | null | undefined
                     }
                   | null
                   | undefined
@@ -1493,6 +1511,7 @@ export type GetQuestionQuery = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1569,6 +1588,7 @@ export type GetStackQuery = {
               name?: string | null | undefined
               role?: UserRole | null | undefined
               isViewer?: boolean | null | undefined
+              isAdmin?: boolean | null | undefined
             }
           | null
           | undefined
@@ -1601,6 +1621,7 @@ export type GetUserQuery = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -1619,6 +1640,7 @@ export type ViewerQuery = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
       }
     | null
     | undefined
@@ -1639,6 +1661,7 @@ export type GetViewerWithSettingsQuery = {
         name?: string | null | undefined
         role?: UserRole | null | undefined
         isViewer?: boolean | null | undefined
+        isAdmin?: boolean | null | undefined
         email?: string | null | undefined
         pendingEmail?: string | null | undefined
         emailSubscriptions?:
@@ -1711,6 +1734,7 @@ export const UserInfoFragmentDoc = gql`
     name
     role
     isViewer
+    isAdmin
   }
 `
 export const CommentInfoFragmentDoc = gql`
