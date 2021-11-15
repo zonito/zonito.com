@@ -3,7 +3,7 @@ Hey, I'm Love Sharma. It's my personal website; I intend to showcase my work, th
 
 I'm currently working with Autodesk, Singapore as a Principal Software Engineer. Projects I've worked on include:
 
-- **Identity (Current)**: Autodesk's User management system manages around 23M userbase.
+- **Identity (Current)**: Autodesk's User management system manages.
 - **API Management**: It's an API Management Service that manages Authentication, Authorisation, Rate Limiting, Monetization, Subscription, Locale, etc., capabilities as part of the overall platform. The foundational service is [Apigee](https://cloud.google.com/apigee). It handles ~7,000 TPS.
 - **Centralize Log Routing**: This Log Routing solution receives Application, Metrics, and Trace Logs from Different Services with capabilities like PII Masking, Truncate, Quota, etc., and routes them to different destinations like Splunk, S3, etc. The Scale is ~50GB/minute.
 
