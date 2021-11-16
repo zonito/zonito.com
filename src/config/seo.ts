@@ -4,7 +4,7 @@ export const baseEmail = 'hello@zonito.com'
 export const defaultSEO = {
   title: 'Love Sharma | Personal Website',
   description:
-    'Product designer, podcaster, and writer, living in San Francisco.',
+    'Hey, I\'m Love Sharma. I intend to showcase my work, thoughts, and a little about personal things.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
