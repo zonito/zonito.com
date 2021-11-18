@@ -9,7 +9,7 @@ I'm currently working with Autodesk, Singapore as a Principal Software Engineer.
 
 Before Autodesk, I worked with Google, India, to build a training enrollment system for DoubleClick Customers, [Google Tag Manager](https://chrome.google.com/webstore/detail/tag-assistant-legacy-by-g/kejbdjndbnbjgmefkgdddjlbokphdefk) (Used by more than 2M+ Users) and a few more internal tools.
 
-I'm actively involved in a few StartUps (i.e., [Prediction Guru](https://www.prediction.guru/), [Centre For Mindfulness](https://www.centreformindfulness.in/), [PolySport](https://www.polysports.org/), and a few more.) as a Technical Advisor / Consultant.
+I'm actively involved in a few StartUps (i.e., [Prediction Guru](https://www.prediction.guru/), [Centre For Mindfulness](https://www.centreformindfulness.in/), [PolySport](https://www.polysports.org/), and a few more - More information below) as a Technical Advisor / Consultant.
 
 My area of interest are:
 
