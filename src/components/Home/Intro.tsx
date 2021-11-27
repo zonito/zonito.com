@@ -28,7 +28,11 @@ interface TableRowProps {
 
 function TableRow({ href, title, subtitle, date }: TableRowProps) {
   return (
-    <a href={href} target="_blank" className="flex items-center space-x-4 group">
+    <a
+      href={href}
+      target="_blank"
+      className="flex items-center space-x-4 group"
+    >
       <span className="flex-none font-medium text-gray-1000 group-hover:underline group-hover:text-blue-600 dark:group-hover:text-blue-500 dark:text-gray-100">
         {title}
       </span>
@@ -55,28 +59,26 @@ const technicalAdvisor = [
     href: 'https://www.centreformindfulness.sg/',
     company: 'Centre for Mindfulness',
     title: 'Technical Advisor',
-    date: '2020-\u00a0\u00a0'
-  }, {
+    date: '2020-\u00a0\u00a0',
+  },
+  {
     href: 'https://www.positiveconsulting.sg/',
     company: 'Positive Performance Consulting',
     title: 'Technical Consultant',
-    date: '2020-2020'
-  }, {
+    date: '2020-2020',
+  },
+  {
     href: 'http://www.prediction.guru',
     company: 'Prediction Guru',
     title: 'Founding Member',
-    date: '2014-2020'
-  }, {
+    date: '2014-2020',
+  },
+  {
     href: 'http://www.polysports.org',
     company: 'Polysports',
     title: 'Technical Consultant',
-    date: '2021-\u00a0\u00a0'
-  }, {
-    href: 'http://www.thehinduhub.org',
-    company: 'NGO: TheHinduHub',
-    title: 'Technical Consultant',
-    date: '2014-2020'
-  }
+    date: '2021-\u00a0\u00a0',
+  },
 ]
 
 const workHistory = [
