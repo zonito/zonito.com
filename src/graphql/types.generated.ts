@@ -5,6 +5,7 @@
 import { gql } from '@apollo/client'
 import * as Apollo from '@apollo/client'
 export type Maybe<T> = T | null
+export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
 }
@@ -31,14 +32,14 @@ export type AddBookmarkInput = {
 }
 
 export type AddPostInput = {
-  excerpt?: Maybe<Scalars['String']>
+  excerpt?: InputMaybe<Scalars['String']>
   slug: Scalars['String']
   text: Scalars['String']
   title: Scalars['String']
 }
 
 export type AddQuestionInput = {
-  description?: Maybe<Scalars['String']>
+  description?: InputMaybe<Scalars['String']>
   title: Scalars['String']
 }
 
@@ -46,7 +47,7 @@ export type AddStackInput = {
   description: Scalars['String']
   image: Scalars['String']
   name: Scalars['String']
-  tag?: Maybe<Scalars['String']>
+  tag?: InputMaybe<Scalars['String']>
   url: Scalars['String']
 }
 
@@ -73,8 +74,8 @@ export type BookmarkEdge = {
 }
 
 export type BookmarkFilter = {
-  host?: Maybe<Scalars['String']>
-  tag?: Maybe<Scalars['String']>
+  host?: InputMaybe<Scalars['String']>
+  tag?: InputMaybe<Scalars['String']>
 }
 
 export type BookmarksConnection = {
@@ -102,22 +103,22 @@ export enum CommentType {
 }
 
 export type EditBookmarkInput = {
-  description?: Maybe<Scalars['String']>
-  faviconUrl?: Maybe<Scalars['String']>
-  tag?: Maybe<Scalars['String']>
+  description?: InputMaybe<Scalars['String']>
+  faviconUrl?: InputMaybe<Scalars['String']>
+  tag?: InputMaybe<Scalars['String']>
   title: Scalars['String']
 }
 
 export type EditPostInput = {
-  excerpt?: Maybe<Scalars['String']>
-  published?: Maybe<Scalars['Boolean']>
+  excerpt?: InputMaybe<Scalars['String']>
+  published?: InputMaybe<Scalars['Boolean']>
   slug: Scalars['String']
   text: Scalars['String']
   title: Scalars['String']
 }
 
 export type EditQuestionInput = {
-  description?: Maybe<Scalars['String']>
+  description?: InputMaybe<Scalars['String']>
   title: Scalars['String']
 }
 
@@ -125,13 +126,13 @@ export type EditStackInput = {
   description: Scalars['String']
   image: Scalars['String']
   name: Scalars['String']
-  tag?: Maybe<Scalars['String']>
+  tag?: InputMaybe<Scalars['String']>
   url: Scalars['String']
 }
 
 export type EditUserInput = {
-  email?: Maybe<Scalars['String']>
-  username?: Maybe<Scalars['String']>
+  email?: InputMaybe<Scalars['String']>
+  username?: InputMaybe<Scalars['String']>
 }
 
 export type EmailSubscription = {
@@ -141,7 +142,7 @@ export type EmailSubscription = {
 }
 
 export type EmailSubscriptionInput = {
-  email?: Maybe<Scalars['String']>
+  email?: InputMaybe<Scalars['String']>
   subscribed: Scalars['Boolean']
   type: EmailSubscriptionType
 }
@@ -233,11 +234,11 @@ export type MutationEditBookmarkArgs = {
 
 export type MutationEditCommentArgs = {
   id: Scalars['ID']
-  text?: Maybe<Scalars['String']>
+  text?: InputMaybe<Scalars['String']>
 }
 
 export type MutationEditEmailSubscriptionArgs = {
-  data?: Maybe<EmailSubscriptionInput>
+  data?: InputMaybe<EmailSubscriptionInput>
 }
 
 export type MutationEditPostArgs = {
@@ -256,7 +257,7 @@ export type MutationEditStackArgs = {
 }
 
 export type MutationEditUserArgs = {
-  data?: Maybe<EditUserInput>
+  data?: InputMaybe<EditUserInput>
 }
 
 export type MutationToggleReactionArgs = {
@@ -313,9 +314,9 @@ export type QueryBookmarkArgs = {
 }
 
 export type QueryBookmarksArgs = {
-  after?: Maybe<Scalars['String']>
-  filter?: Maybe<BookmarkFilter>
-  first?: Maybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
+  filter?: InputMaybe<BookmarkFilter>
+  first?: InputMaybe<Scalars['Int']>
 }
 
 export type QueryCommentArgs = {
@@ -332,7 +333,7 @@ export type QueryPostArgs = {
 }
 
 export type QueryPostsArgs = {
-  filter?: Maybe<WritingFilter>
+  filter?: InputMaybe<WritingFilter>
 }
 
 export type QueryQuestionArgs = {
@@ -340,9 +341,9 @@ export type QueryQuestionArgs = {
 }
 
 export type QueryQuestionsArgs = {
-  after?: Maybe<Scalars['String']>
-  filter?: Maybe<QuestionFilter>
-  first?: Maybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
+  filter?: InputMaybe<QuestionFilter>
+  first?: InputMaybe<Scalars['Int']>
 }
 
 export type QueryStackArgs = {
@@ -350,8 +351,8 @@ export type QueryStackArgs = {
 }
 
 export type QueryStacksArgs = {
-  after?: Maybe<Scalars['String']>
-  first?: Maybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
+  first?: InputMaybe<Scalars['Int']>
 }
 
 export type QueryUserArgs = {
@@ -380,7 +381,7 @@ export type QuestionEdge = {
 }
 
 export type QuestionFilter = {
-  status?: Maybe<QuestionStatus>
+  status?: InputMaybe<QuestionStatus>
 }
 
 export enum QuestionStatus {
@@ -459,7 +460,7 @@ export enum UserRole {
 }
 
 export type WritingFilter = {
-  published?: Maybe<Scalars['Boolean']>
+  published?: InputMaybe<Scalars['Boolean']>
 }
 
 export type BookmarkCoreFragment = {
@@ -925,7 +926,7 @@ export type DeleteCommentMutation = {
 }
 
 export type EditEmailSubscriptionMutationVariables = Exact<{
-  data?: Maybe<EmailSubscriptionInput>
+  data?: InputMaybe<EmailSubscriptionInput>
 }>
 
 export type EditEmailSubscriptionMutation = {
@@ -1272,7 +1273,7 @@ export type DeleteUserMutation = {
 }
 
 export type EditUserMutationVariables = Exact<{
-  data?: Maybe<EditUserInput>
+  data?: InputMaybe<EditUserInput>
 }>
 
 export type EditUserMutation = {
@@ -1293,9 +1294,9 @@ export type EditUserMutation = {
 }
 
 export type GetBookmarksQueryVariables = Exact<{
-  first?: Maybe<Scalars['Int']>
-  after?: Maybe<Scalars['String']>
-  filter?: Maybe<BookmarkFilter>
+  first?: InputMaybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
+  filter?: InputMaybe<BookmarkFilter>
 }>
 
 export type GetBookmarksQuery = {
@@ -1390,7 +1391,7 @@ export type GetCommentsQuery = {
 }
 
 export type GetPostsQueryVariables = Exact<{
-  filter?: Maybe<WritingFilter>
+  filter?: InputMaybe<WritingFilter>
 }>
 
 export type GetPostsQuery = {
@@ -1433,9 +1434,9 @@ export type GetPostQuery = {
 }
 
 export type GetQuestionsQueryVariables = Exact<{
-  first?: Maybe<Scalars['Int']>
-  after?: Maybe<Scalars['String']>
-  filter?: Maybe<QuestionFilter>
+  first?: InputMaybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
+  filter?: InputMaybe<QuestionFilter>
 }>
 
 export type GetQuestionsQuery = {
@@ -1521,8 +1522,8 @@ export type GetQuestionQuery = {
 }
 
 export type GetStacksQueryVariables = Exact<{
-  first?: Maybe<Scalars['Int']>
-  after?: Maybe<Scalars['String']>
+  first?: InputMaybe<Scalars['Int']>
+  after?: InputMaybe<Scalars['String']>
 }>
 
 export type GetStacksQuery = {
