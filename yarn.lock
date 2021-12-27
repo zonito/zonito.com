@@ -10307,10 +10307,10 @@ rehype-raw@^6.1.0:
     hast-util-raw "^7.2.0"
     unified "^10.0.0"
 
-rehype-remark@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/rehype-remark/-/rehype-remark-9.1.0.tgz#27e74e2a75d52caca494d182df426e555350781b"
-  integrity sha512-SpV+p6E/9Dp2FjSvEwLP575zXUWA+iRat6pXpPfkc8XqdpMbpTdCyBChVzhqePwDGvFjrDoy6Gt9X3rcv6IyIA==
+rehype-remark@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/rehype-remark/-/rehype-remark-9.1.1.tgz#b8c52b75cfa12d92b62edfbf3b661ae17483055d"
+  integrity sha512-z/f6hpN5vzNs25WJyRFqo1kPiPlNM0hGi0c4fSjTaYf9B/d+c/selGA5EO2yRm732ib91eLmXl2r/+5A0lZuQA==
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/mdast" "^3.0.0"
