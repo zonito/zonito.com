@@ -1848,10 +1848,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b.tgz#d3a457cec4ef7a3b3412c45b1f2eac68c974474b"
   integrity sha512-Ip9CcCeUocH61eXu4BUGpvl5KleQyhcUVLpWCv+0ZmDv44bFaDpREqjGHHdRupvPN/ugB6gTlD9b9ewdj02yVA==
 
-"@prisma/prisma-fmt-wasm@3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980":
-  version "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
-  resolved "https://registry.yarnpkg.com/@prisma/prisma-fmt-wasm/-/prisma-fmt-wasm-3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980.tgz#c8dcc169ef3b722e5d0bcb2ebc541065719e40fa"
-  integrity sha512-9L+jHXt1zFcnhhcxa+oUBI9r0qh+fNFtDKxndj0C4pnAnGGNevvAo4GZNqWICa8BJbNgiV/XacTMea+98e1Rhw==
+"@prisma/prisma-fmt-wasm@3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b":
+  version "3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b"
+  resolved "https://registry.yarnpkg.com/@prisma/prisma-fmt-wasm/-/prisma-fmt-wasm-3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b.tgz#68a4267b50c9ecdc5578c1cb8c131b5a5fd3f759"
+  integrity sha512-zCJfpPpH98YJMKbpygHHVqPrDRTO5WhUAgf8hZnUDCu/iWlgW9Zi9dzuFScml+Ns/Jr5XAl1lOTJXK/3IZu9NA==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -9583,12 +9583,12 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-prisma@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.12.0.tgz#b05f914a1d039a98774366e93019d17cd3cd9453"
-  integrity sha512-q6kKd/+AJlAPxspthTdahRTD/KLLYs4OUDQbvH+kl7Zuy/dyZ45UXNblX/qdFa2wO3bgBFwF4XebugA1MnYUqQ==
+prettier-plugin-prisma@^3.13.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-prisma/-/prettier-plugin-prisma-3.13.0.tgz#e74287c7539a92e377d2b3d06d2d5c4f0410ed7f"
+  integrity sha512-wI5wVf1v5SIPaoqDVlnSK7VDAOn2mlgjbWqNYsXgjwh16367+u0g8l3r1YDxlQxCiSepCEPTtokQiCnZDin05A==
   dependencies:
-    "@prisma/prisma-fmt-wasm" "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
+    "@prisma/prisma-fmt-wasm" "3.13.0-17.efdf9b1183dddfd4258cd181a72125755215ab7b"
 
 prettier@^2.5.1, prettier@^2.6.2:
   version "2.6.2"
