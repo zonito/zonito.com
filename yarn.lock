@@ -92,10 +92,10 @@
     iterall "^1.1.3"
     uuid "^3.1.0"
 
-"@auth0/nextjs-auth0@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-1.8.0.tgz#c65520d50ec9e09a47dcc02a0682a26760072987"
-  integrity sha512-lOI7i1khyuvVUGD/V9k+YMVxj3LB74KYqrCRQ8Uezai8YEAPHhExGMpIlFUPV7J4iPIuNNhW/4TYa45nkPNr0w==
+"@auth0/nextjs-auth0@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-1.9.0.tgz#05a23df9092f9217122ebdb031d5a0dbfbb5d632"
+  integrity sha512-NYM545sXeF7GNrUIr7eZ5oZo0EVhKRCnDL27v6tw4Og/OfRt/QbzX7D//jjN/pjqg8KWZvmwit+zDa2X7dp+tQ==
   dependencies:
     base64url "^3.0.1"
     cookie "^0.5.0"
@@ -106,7 +106,7 @@
     jose "^2.0.5"
     on-headers "^1.0.2"
     openid-client "^4.9.1"
-    tslib "^2.3.1"
+    tslib "^2.4.0"
     url-join "^4.0.1"
 
 "@babel/code-frame@7.12.11":
