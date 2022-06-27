@@ -47,7 +47,7 @@
     "lru-cache": "^7.10.1",
     "next": "12.1.6",
     "next-seo": "^5.4.0",
-    "postmark": "^3.0.11",
+    "postmark": "^3.0.12",
     "react": "^18.2.0",
     "react-autosize-textarea": "^7.1.0",
     "react-dom": "^18.1.0",
