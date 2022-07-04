@@ -10353,10 +10353,10 @@ remark-gfm@^3.0.1:
     micromark-extension-gfm "^2.0.0"
     unified "^10.0.0"
 
-remark-linkify-regex@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/remark-linkify-regex/-/remark-linkify-regex-1.2.0.tgz#2592489fff4900c42fd9ead5f4e5f3a62aa2871f"
-  integrity sha512-2ZFNY98uk1jJvS4Us6xe2nZG3PANTVwiRvKL7bxErkxx/SMmIU27bypXOsjRTjomk67OetoYPHd03Fe9gWhLNw==
+remark-linkify-regex@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/remark-linkify-regex/-/remark-linkify-regex-1.2.1.tgz#5121ad7f8297a7d75e56df4d87c808052d325fc8"
+  integrity sha512-aKZAFcZWzrw64m1eTKfVgiZ9iKhZ5vxeOVoACjCd9ahPpKpdnAz++z0qVaR7h0z5nryrvUrTQvIyFieHkdEfCA==
   dependencies:
     unicode-word-regex "^1.0.1"
     unist-util-flatmap "1.0.x"
