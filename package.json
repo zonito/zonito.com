@@ -46,7 +46,7 @@
     "lodash": "^4.17.21",
     "lru-cache": "^7.13.1",
     "next": "12.2.2",
-    "next-seo": "^5.4.0",
+    "next-seo": "^5.5.0",
     "postmark": "^3.0.12",
     "react": "^18.2.0",
     "react-autosize-textarea": "^7.1.0",
