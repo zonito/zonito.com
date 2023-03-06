@@ -122,10 +122,10 @@
   dependencies:
     node-fetch "^2.6.1"
 
-"@auth0/nextjs-auth0@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-2.2.1.tgz#6b385605fb010fdf99aba4687999e7b05230a9fd"
-  integrity sha512-bYEz43uRalGKW87ILhRFfYRYiKjACuJyHKmGtLz8qCnqeGCapBOh/WgFdNWAnqBJEjN+Som3UXdLzVotZ0b1yg==
+"@auth0/nextjs-auth0@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-2.2.2.tgz#5fac070c402136af968df32a9deb57bf4e7f3d99"
+  integrity sha512-Vo85dFzB9qAwoqxv32uEHo4aaBpb0x5kMnDTT4a2GMX3Hsw8RJOrnrCVdCcNXdQolLOHAA9huK7RMQqLEzInYg==
   dependencies:
     "@panva/hkdf" "^1.0.2"
     cookie "^0.5.0"
