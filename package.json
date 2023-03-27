@@ -71,7 +71,7 @@
     "remove-markdown": "^0.5.0",
     "slugify": "^1.6.5",
     "string-replace-to-array": "^2.1.0",
-    "turndown": "^7.1.1",
+    "turndown": "^7.1.2",
     "turndown-plugin-gfm": "^1.0.2",
     "unified": "^10.1.2",
     "unified-stream": "^2.0.0",
