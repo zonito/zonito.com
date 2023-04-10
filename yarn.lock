@@ -2815,10 +2815,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
-"@types/webrtc@^0.0.33":
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/@types/webrtc/-/webrtc-0.0.33.tgz#8d5c64320741c9b0bd1cdd2890f12d9e6b5ae210"
-  integrity sha512-xjN6BelzkY3lzXjIjXGqJVDS6XDleEsvp1bVIyNccXCcMoTH3wvUXFew4/qflwJdNqjmq98Zc5VcALV+XBKBvg==
+"@types/webrtc@^0.0.34":
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@types/webrtc/-/webrtc-0.0.34.tgz#b154bb8e2a4dcf8de4afc6c29cad814870084d7c"
+  integrity sha512-PZ15X7RNyGETO1lcAJl22vMfC7vc7WD/mRYA7iP7E+N/shLJzajHXwtWVMIuyuIoHTMhDcJO9poq+Xnmoy0p+g==
 
 "@types/ws@^7.0.0":
   version "7.4.7"
