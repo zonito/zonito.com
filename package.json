@@ -87,7 +87,7 @@
     "@graphql-codegen/typescript": "^3.0.4",
     "@graphql-codegen/typescript-operations": "^3.0.4",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
-    "@next/eslint-plugin-next": "^13.4.1",
+    "@next/eslint-plugin-next": "^13.4.3",
     "@testing-library/cypress": "^9.0.0",
     "@types/chai": "^4.3.5",
     "@types/dom-mediacapture-record": "^1.0.16",
