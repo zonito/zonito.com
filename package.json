@@ -114,7 +114,7 @@
     "now-env": "^3.2.0",
     "postcss": "^8.4.23",
     "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^8.3.2",
+    "postcss-preset-env": "^8.4.1",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
     "prettier-plugin-prisma": "^4.13.0",
