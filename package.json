@@ -63,7 +63,7 @@
     "rehype-remark": "^9.1.2",
     "rehype-sanitize": "^5.0.1",
     "rehype-stringify": "^9.0.3",
-    "remark": "^14.0.2",
+    "remark": "^14.0.3",
     "remark-gfm": "^3.0.1",
     "remark-linkify-regex": "^1.2.1",
     "remark-preset-lint-recommended": "^6.1.2",
