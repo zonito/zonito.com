@@ -27,7 +27,7 @@
     "@auth0/nextjs-auth0": "^2.6.0",
     "@graphql-tools/schema": "^10.0.0",
     "@headlessui/react": "^1.7.15",
-    "@prisma/client": "^4.14.1",
+    "@prisma/client": "^4.15.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
