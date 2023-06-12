@@ -127,10 +127,10 @@
   dependencies:
     node-fetch "^2.6.1"
 
-"@auth0/nextjs-auth0@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-2.6.0.tgz#4f97e79569c5159ffb9a39e83e7bb88334ce50cd"
-  integrity sha512-35AGe4vCdSxjBu5MLJkBTQa83QwjAA2Ovg2IaWN9CJ1gFbydQmtOyT1b7XqSel63sZN6x9W+BDCS/xak0JPC+Q==
+"@auth0/nextjs-auth0@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-2.6.2.tgz#e349bca5d383ebdf75d42e8e262e4ff9d8a03cb0"
+  integrity sha512-Y4Ss5Fw7EgqX8FJbzvVl0QfIQAyJvFLw7pRiFYl58I2Nc+ltpqNJBm5MNbAu4gpAa1tQAMiyINEJBBZ5YhB82Q==
   dependencies:
     "@panva/hkdf" "^1.0.2"
     cookie "^0.5.0"
@@ -7675,12 +7675,7 @@ joi@^17.6.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
-jose@^4.10.0, jose@^4.9.2:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-4.11.1.tgz#8f7443549befe5bddcf4bae664a9cbc1a62da4fa"
-  integrity sha512-YRv4Tk/Wlug8qicwqFNFVEZSdbROCHRAC6qu/i0dyNKr5JQdoa2pIGoS04lLO/jXQX7Z9omoNewYIVIxqZBd9Q==
-
-jose@^4.11.4:
+jose@^4.10.0, jose@^4.11.4, jose@^4.9.2:
   version "4.14.4"
   resolved "https://registry.yarnpkg.com/jose/-/jose-4.14.4.tgz#59e09204e2670c3164ee24cbfe7115c6f8bff9ca"
   integrity sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==
