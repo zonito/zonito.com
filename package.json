@@ -115,7 +115,7 @@
     "postcss": "^8.4.24",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.0.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "prettier-eslint": "^15.0.1",
     "prettier-plugin-prisma": "^4.13.0",
     "prisma": "^4.16.2",
