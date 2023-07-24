@@ -99,7 +99,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.14",
     "babel-eslint": "^10.1.0",
-    "cypress": "^12.17.1",
+    "cypress": "^12.17.2",
     "eslint": "^7.32.0",
     "eslint-config-next": "^13.4.12",
     "eslint-config-prettier": "^8.8.0",
