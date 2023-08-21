@@ -39,7 +39,7 @@
     "date-fns": "^2.30.0",
     "deepmerge": "^4.3.1",
     "feed": "^4.2.2",
-    "framer-motion": "^10.15.2",
+    "framer-motion": "^10.16.1",
     "graphql": "^16.8.0",
     "isomorphic-unfetch": "^4.0.2",
     "jsonwebtoken": "^9.0.1",
