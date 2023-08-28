@@ -12785,13 +12785,13 @@ unified-message-control@^4.0.0:
     vfile-location "^4.0.0"
     vfile-message "^3.0.0"
 
-unified-stream@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/unified-stream/-/unified-stream-2.0.0.tgz#53172f26f6a478d1066114fb91b7cb1c96c9bb79"
-  integrity sha512-KdwODjgqGsTbHMLqm57qLxNAkbCboD5EMPC4BULs/9iy5ZTsw3xgc0BUjeCmABt/yfZt0k7rgkBLcdiZ8LwZug==
+unified-stream@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/unified-stream/-/unified-stream-3.0.0.tgz#bb4ed133a0664253edc95fb88960a96c2a45280b"
+  integrity sha512-xUSj9ECxGrG1IAAzIuOY5fA4NzY7D5j/2dMDrHgQoPm1Y7fdt+qHS0++RjVPYHaJz9pd1Od8vBRHL5yRV1K2cQ==
   dependencies:
-    unified "^10.0.0"
-    vfile "^5.0.0"
+    unified "^11.0.0"
+    vfile "^6.0.0"
 
 unified@9.2.0:
   version "9.2.0"
