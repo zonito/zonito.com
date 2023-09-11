@@ -30,7 +30,7 @@
     "@prisma/client": "^5.2.0",
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.10",
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "apollo-server-micro": "^2.26.1",
