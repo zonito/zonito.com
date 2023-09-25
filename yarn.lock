@@ -3763,14 +3763,14 @@ auto-bind@~4.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-4.0.0.tgz#e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb"
   integrity sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==
 
-autoprefixer@^10.4.15:
-  version "10.4.15"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.15.tgz#a1230f4aeb3636b89120b34a1f513e2f6834d530"
-  integrity sha512-KCuPB8ZCIqFdA4HwKXsvz7j6gvSDNhDP7WnUjBleRkKjPdvCmHFuQ77ocavI8FT6NdvlBnE2UFr2H4Mycn8Vew==
+autoprefixer@^10.4.15, autoprefixer@^10.4.16:
+  version "10.4.16"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.16.tgz#fad1411024d8670880bdece3970aa72e3572feb8"
+  integrity sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==
   dependencies:
     browserslist "^4.21.10"
-    caniuse-lite "^1.0.30001520"
-    fraction.js "^4.2.0"
+    caniuse-lite "^1.0.30001538"
+    fraction.js "^4.3.6"
     normalize-range "^0.1.2"
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
@@ -4275,10 +4275,10 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001517, caniuse-lite@^1.0.30001520:
-  version "1.0.30001520"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001520.tgz#62e2b7a1c7b35269594cf296a80bdf8cb9565006"
-  integrity sha512-tahF5O9EiiTzwTUqAeFjIZbn4Dnqxzz7ktrgGlMYNLH43Ul26IgTMH/zvL3DG0lZxBYnlT04axvInszUsZULdA==
+caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001517, caniuse-lite@^1.0.30001538:
+  version "1.0.30001539"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001539.tgz#325a387ab1ed236df2c12dc6cd43a4fff9903a44"
+  integrity sha512-hfS5tE8bnNiNvEOEkm8HElUHroYwlqMMENEzELymy77+tJ6m+gA2krtHl5hxJaj71OlpC2cHZbdSMX1/YEqEkA==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -6477,10 +6477,10 @@ formdata-polyfill@^4.0.10:
   dependencies:
     fetch-blob "^3.1.2"
 
-fraction.js@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
-  integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
+fraction.js@^4.3.6:
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.6.tgz#e9e3acec6c9a28cf7bc36cbe35eea4ceb2c5c92d"
+  integrity sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
