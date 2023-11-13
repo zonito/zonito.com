@@ -92,7 +92,7 @@
     "@types/chai": "^4.3.9",
     "@types/dom-mediacapture-record": "^1.0.18",
     "@types/jest": "^29.5.7",
-    "@types/mocha": "^10.0.3",
+    "@types/mocha": "^10.0.4",
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.36",
     "@types/webrtc": "^0.0.39",
