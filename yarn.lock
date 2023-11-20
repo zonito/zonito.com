@@ -9824,10 +9824,10 @@ postcss@8.4.31, postcss@^8.4.23, postcss@^8.4.31, postcss@^8.4.4:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postmark@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/postmark/-/postmark-3.1.2.tgz#16fb7b36906d9fb0056f3c1127ed9fc5721bb476"
-  integrity sha512-nm5vZR75Fk7coboWVMysq6eWZHMOUZAXOl+JXD3O1rzjOlZ9eYYq++/WyrheTyl0L4h97XJkftanFVU7OCTCDw==
+postmark@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/postmark/-/postmark-3.11.0.tgz#43d68e9dc629c92da53ec57b3507715be3846787"
+  integrity sha512-asguBQ9M/8ueQMJ1D45iPF+3+T641q8rAU8m8cQSfhDWePw4TVYql9wszjAwSCE93dUonyrF08D8Kvg6USBoFA==
   dependencies:
     axios "^0.25.0"
 
