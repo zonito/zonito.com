@@ -7,18 +7,20 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@apollo/client@^3.0.0-beta.23", "@apollo/client@^3.8.10":
-  version "3.8.10"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.8.10.tgz#db6ee4378212d93c1f22b90a2aa474f6e9664b68"
-  integrity sha512-p/22RZ8ehHyvySnC20EHPPe0gdu8Xp6ZCiXOfdEe1ZORw5cUteD/TLc66tfKv8qu8NLIfbiWoa+6s70XnKvxqg==
+"@apollo/client@^3.0.0-beta.23", "@apollo/client@^3.9.4":
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.9.4.tgz#a0230ce42a4d0c26c9f75f2a10c0f330f3ef135c"
+  integrity sha512-Ip6dxjshDT2Dp6foLASTnKBW45Fytew/5JZutZwgc78hVrrGpO9UtZA9xteHXYdap0wIgCxCfeIQwbSu1ZdQpw==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
+    "@wry/caches" "^1.0.0"
     "@wry/equality" "^0.5.6"
     "@wry/trie" "^0.5.0"
     graphql-tag "^2.12.6"
     hoist-non-react-statics "^3.3.2"
     optimism "^0.18.0"
     prop-types "^15.7.2"
+    rehackt "0.0.4"
     response-iterator "^0.2.6"
     symbol-observable "^4.0.0"
     ts-invariant "^0.10.3"
@@ -10557,6 +10559,11 @@ regjsparser@^0.7.0:
   integrity sha512-A4pcaORqmNMDVwUjWoTzuhwMGpP+NykpfqAsEgI1FSH/EzC7lrN5TMd+kN8YCovX+jMpu8eaqXgXPCa0g8FQNQ==
   dependencies:
     jsesc "~0.5.0"
+
+rehackt@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/rehackt/-/rehackt-0.0.4.tgz#dca5498e1f6c81d3d610ff2abfb3c3feec6afce8"
+  integrity sha512-xFroSGCbMEK/cTJVhq+c8l/AzIeMeojVyLqtZmr2jmIAFvePjapkCSGg9MnrcNk68HPaMxGf+Ndqozotu78ITw==
 
 rehype-minify-whitespace@^6.0.0:
   version "6.0.0"
