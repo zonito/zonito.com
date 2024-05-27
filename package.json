@@ -110,7 +110,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "husky": "^9.0.11",
     "json-schema": "^0.4.0",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.5",
     "now-env": "^3.2.0",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
