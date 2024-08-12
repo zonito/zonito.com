@@ -34,7 +34,7 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "apollo-server-micro": "^2.26.1",
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "^1.0.0",
     "cryptr": "^6.3.0",
     "date-fns": "^3.6.0",
     "deepmerge": "^4.3.1",
