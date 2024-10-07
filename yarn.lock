@@ -3132,10 +3132,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
-"@types/webrtc@^0.0.43":
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/@types/webrtc/-/webrtc-0.0.43.tgz#6a102c82daff5c3560cf8074707ad7055b9fa045"
-  integrity sha512-W5FyScaZ+nLb0CXP/4UaRiNr042RwW/RnLUZYt0uwveZN8w+X1gtt0bYIg9oMzt5ODiU/aQV/kyCFv24wfNrXA==
+"@types/webrtc@^0.0.44":
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/@types/webrtc/-/webrtc-0.0.44.tgz#62b61ff391b5ded124861eaaeefa9433fc6ae9b4"
+  integrity sha512-4BJZdzrApNFeuXgucyqs24k69f7oti3wUcGEbFbaV08QBh7yEe3tnRRuYXlyXJNXiumpZujiZqUZZ2/gMSeO0g==
 
 "@types/ws@^7.0.0":
   version "7.4.7"
