@@ -90,7 +90,7 @@
     "@next/eslint-plugin-next": "^14.2.14",
     "@testing-library/cypress": "^10.0.2",
     "@types/chai": "^5.0.0",
-    "@types/dom-mediacapture-record": "^1.0.19",
+    "@types/dom-mediacapture-record": "^1.0.20",
     "@types/jest": "^29.5.13",
     "@types/mocha": "^10.0.8",
     "@types/node": "^22.7.4",
