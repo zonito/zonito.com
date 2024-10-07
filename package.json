@@ -94,7 +94,7 @@
     "@types/jest": "^29.5.13",
     "@types/mocha": "^10.0.8",
     "@types/node": "^22.7.4",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/webrtc": "^0.0.43",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.20",
