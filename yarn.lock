@@ -3003,10 +3003,10 @@
   resolved "https://registry.yarnpkg.com/@types/deep-eql/-/deep-eql-4.0.2.tgz#334311971d3a07121e7eb91b684a605e7eea9cbd"
   integrity sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==
 
-"@types/dom-mediacapture-record@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@types/dom-mediacapture-record/-/dom-mediacapture-record-1.0.20.tgz#ab48ee0e0f38810110ceb158d6844ad4c964bcdf"
-  integrity sha512-+Dau03yBsbbunOxsTs7kyb+ZNIT6bE/hNBK+FdDtAj2bmC+p5DtbfxeewgtezXGwK3RvJflY1w6UtyLglzi2+Q==
+"@types/dom-mediacapture-record@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@types/dom-mediacapture-record/-/dom-mediacapture-record-1.0.21.tgz#b8f0edb20b3c1f504f3a38362b9c33494ba3430e"
+  integrity sha512-JwJc6MRVy5xnOUKUgzgGRZA/DOZO14x+4B4hJNZ8c4T5Cs+U00ca62RJHXaj4F9NWZoorKT2PxW5Cq+ENT+E7w==
 
 "@types/eslint-scope@^3.7.7":
   version "3.7.7"
