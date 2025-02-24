@@ -75,7 +75,7 @@
     "turndown-plugin-gfm": "^1.0.2",
     "unified": "^11.0.5",
     "unified-stream": "^3.0.0",
-    "uuid": "^11.0.5"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@ardatan/graphql-tools": "^4.1.0",
