@@ -55,7 +55,7 @@
     "react-feather": "^2.0.10",
     "react-hot-toast": "^2.5.2",
     "react-linkify": "^1.0.0-alpha",
-    "react-markdown": "^10.0.1",
+    "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
     "react-visibility-sensor": "^5.1.1",
     "rehype-parse": "^9.0.1",
