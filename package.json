@@ -93,7 +93,7 @@
     "@types/dom-mediacapture-record": "^1.0.22",
     "@types/jest": "^29.5.14",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.15.4",
+    "@types/node": "^22.15.5",
     "@types/react": "^18.3.12",
     "@types/webrtc": "^0.0.46",
     "@typescript-eslint/parser": "^4.33.0",
