@@ -12340,10 +12340,10 @@ remedial@^1.0.7:
   resolved "https://registry.yarnpkg.com/remedial/-/remedial-1.0.8.tgz#a5e4fd52a0e4956adbaf62da63a5a46a78c578a0"
   integrity sha512-/62tYiOe6DzS5BqVsNpH/nkGlX45C/Sp6V+NtiN6JQNS1Viay7cWkazmRkrQrdFj2eshDe96SIQNIoMxqhzBOg==
 
-remove-markdown@^0.5.5:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.5.5.tgz#52913da6204391232cbce5a1bf2c26f990bdf8e0"
-  integrity sha512-lMR8tOtDqazFT6W2bZidoXwkptMdF3pCxpri0AEokHg0sZlC2GdoLqnoaxsEj1o7/BtXV1MKtT3YviA1t7rW7g==
+remove-markdown@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.6.2.tgz#8e6a8d1b148569cc4df0404b60b0a42fb49840b5"
+  integrity sha512-EijDXJZbzpGbQBd852ViUzcqgpMujthM+SAEHiWCMcZonRbZ+xViWKLJA/vrwbDwYdxrs1aFDjpBhcGrZoJRGA==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
