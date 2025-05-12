@@ -116,7 +116,7 @@
     "postcss-import": "^16.1.0",
     "postcss-preset-env": "^10.1.6",
     "prettier": "^3.5.3",
-    "prettier-eslint": "^16.4.1",
+    "prettier-eslint": "^16.4.2",
     "prettier-plugin-prisma": "^5.0.0",
     "prisma": "^6.7.0",
     "stylelint-config-recommended": "^16.0.0",
