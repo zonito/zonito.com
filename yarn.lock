@@ -6876,10 +6876,10 @@ fd-slicer@~1.1.0:
   dependencies:
     pend "~1.2.0"
 
-feed@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/feed/-/feed-5.0.1.tgz#8235d898983e70ea610386f857f1d3411cf8b762"
-  integrity sha512-kOveKLHucVZ6RI91bdWAts9O0L1N2mGzRGVCDQPRnHh4HmgqLdN66Cp/5dMeJZGn/qnBslWliwX37FEBq8DCIA==
+feed@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/feed/-/feed-5.1.0.tgz#a64a7c4e127fbe01f10072e42f4964d8889fc6c0"
+  integrity sha512-qGNhgYygnefSkAHHrNHqC7p3R8J0/xQDS/cYUud8er/qD9EFGWyCdUDfULHTJQN1d3H3WprzVwMc9MfB4J50Wg==
   dependencies:
     xml-js "^1.6.11"
 
