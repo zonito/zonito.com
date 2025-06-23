@@ -2730,10 +2730,10 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@prisma/client@^6.9.0":
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-6.9.0.tgz#3779ba71a4c9fe8c329506f126dc70b71410c358"
-  integrity sha512-Gg7j1hwy3SgF1KHrh0PZsYvAaykeR0PaxusnLXydehS96voYCGt1U5zVR31NIouYc63hWzidcrir1a7AIyCsNQ==
+"@prisma/client@^6.10.1":
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-6.10.1.tgz#f5cf8731727ea833b53524f300458d0adbb5c58f"
+  integrity sha512-Re4pMlcUsQsUTAYMK7EJ4Bw2kg3WfZAAlr8GjORJaK4VOP6LxRQUQ1TuLnxcF42XqGkWQ36q5CQF1yVadANQ6w==
 
 "@prisma/config@6.9.0":
   version "6.9.0"
