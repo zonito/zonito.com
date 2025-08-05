@@ -123,7 +123,7 @@
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "typescript-eslint-parser": "^22.0.0",
-    "webpack": "^5.100.1"
+    "webpack": "^5.101.0"
   },
   "lint-staged": {
     "*.+(ts|tsx)": [
