@@ -122,15 +122,15 @@
   dependencies:
     node-fetch "^2.6.1"
 
-"@auth0/nextjs-auth0@^4.10.0":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-4.10.0.tgz#d13797bd886329c8d03b689b658842574d7176ef"
-  integrity sha512-4CBuMlPJ4boxrB5IYisqMh9VBn74PGsspMfZpLG5JvrgDklw2CZsThW+UeAi1YMhE4/3VHyeht2yzN1Fs95bug==
+"@auth0/nextjs-auth0@^4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-4.11.0.tgz#8e352df9db9a83274ec1b2637af2e92a99d86d02"
+  integrity sha512-kI7lfysjQfN0/8LJp6to00BrKH2FTR5wz/tufAxydFiXiAvcwecECXrtcpDbN+C2pA3gkyfNb407001YGIhLow==
   dependencies:
     "@edge-runtime/cookies" "^5.0.1"
     "@panva/hkdf" "^1.2.1"
     jose "^6.0.11"
-    oauth4webapi "^3.1.2"
+    oauth4webapi "^3.8.2"
     openid-client "^6.8.0"
     swr "^2.2.5"
 
@@ -10602,10 +10602,10 @@ nypm@^0.6.0:
     pkg-types "^2.2.0"
     tinyexec "^1.0.1"
 
-oauth4webapi@^3.1.2, oauth4webapi@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/oauth4webapi/-/oauth4webapi-3.8.1.tgz#a6e205570c09e33aa656982c85e78841a57a6fec"
-  integrity sha512-olkZDELNycOWQf9LrsELFq8n05LwJgV8UkrS0cburk6FOwf8GvLam+YB+Uj5Qvryee+vwWOfQVeI5Vm0MVg7SA==
+oauth4webapi@^3.8.1, oauth4webapi@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/oauth4webapi/-/oauth4webapi-3.8.2.tgz#500d1979038c14656f3f24ff1eb501ff3993115b"
+  integrity sha512-FzZZ+bht5X0FKe7Mwz3DAVAmlH1BV5blSak/lHMBKz0/EBMhX6B10GlQYI51+oRp8ObJaX0g6pXrAxZh5s8rjw==
 
 object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
