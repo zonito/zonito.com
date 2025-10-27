@@ -120,7 +120,7 @@
     "prettier-plugin-prisma": "^5.0.0",
     "prisma": "^6.17.1",
     "stylelint-config-recommended": "^17.0.0",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
     "typescript-eslint-parser": "^22.0.0",
     "webpack": "^5.102.1"
