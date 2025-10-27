@@ -83,7 +83,7 @@
     "@cypress/webpack-preprocessor": "^7.0.1",
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "@graphql-codegen/add": "^6.0.0",
-    "@graphql-codegen/cli": "^6.0.0",
+    "@graphql-codegen/cli": "^6.0.1",
     "@graphql-codegen/typescript": "^5.0.1",
     "@graphql-codegen/typescript-operations": "^5.0.2",
     "@graphql-codegen/typescript-react-apollo": "^4.3.3",
