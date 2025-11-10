@@ -2914,10 +2914,10 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@prisma/client@^6.18.0":
-  version "6.18.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-6.18.0.tgz#95f0efe03b5827d9bf5c80b6b7298e46094b5fbf"
-  integrity sha512-jnL2I9gDnPnw4A+4h5SuNn8Gc+1mL1Z79U/3I9eE2gbxJG1oSA+62ByPW4xkeDgwE0fqMzzpAZ7IHxYnLZ4iQA==
+"@prisma/client@^6.19.0":
+  version "6.19.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-6.19.0.tgz#25d5387cbcf1d92f234f6b07d6a1bb787ed71391"
+  integrity sha512-QXFT+N/bva/QI2qoXmjBzL7D6aliPffIwP+81AdTGq0FXDoLxLkWivGMawG8iM5B9BKfxLIXxfWWAF6wbuJU6g==
 
 "@prisma/config@6.18.0":
   version "6.18.0"
