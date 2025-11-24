@@ -3046,10 +3046,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-16.0.4.tgz#5b80be1da6bfcbdd3f48cc7a577bed87bb402a0b"
   integrity sha512-FDPaVoB1kYhtOz6Le0Jn2QV7RZJ3Ngxzqri7YX4yu3Ini+l5lciR7nA9eNDpKTmDm7LWZtxSju+/CQnwRBn2pA==
 
-"@next/eslint-plugin-next@16.0.3", "@next/eslint-plugin-next@^16.0.3":
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-16.0.3.tgz#003142fb52928cf2e81ec1b159fab993fe58825c"
-  integrity sha512-6sPWmZetzFWMsz7Dhuxsdmbu3fK+/AxKRtj7OB0/3OZAI2MHB/v2FeYh271LZ9abvnM1WIwWc/5umYjx0jo5sQ==
+"@next/eslint-plugin-next@16.0.4", "@next/eslint-plugin-next@^16.0.3":
+  version "16.0.4"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-16.0.4.tgz#a9882d742468cda47e7267bdf2161139cdb214a0"
+  integrity sha512-0emoVyL4Z5NEkRNb63ko/BqLC9OFULcY7mJ3lSerBCqgh/UFcjnvodyikV2bTl7XygwcamJxJAfxCo1oAVfH6g==
   dependencies:
     fast-glob "3.3.1"
 
@@ -6931,12 +6931,12 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz#4683126b500b61762f2dbebace1806e8be31b1c8"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-config-next@^16.0.3:
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-16.0.3.tgz#986cf220a9a879f4648f2ead3f4b45a4201c5a92"
-  integrity sha512-5F6qDjcZldf0Y0ZbqvWvap9xzYUxyDf7/of37aeyhvkrQokj/4bT1JYWZdlWUr283aeVa+s52mPq9ogmGg+5dw==
+eslint-config-next@^16.0.4:
+  version "16.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-16.0.4.tgz#ec680fc7d014260bddea1a6d46b0d040ee71f827"
+  integrity sha512-FknAsm/uexYriO6UXzV2QEm4Yz/5DVQCtMUHx0FRYAKqqf5ia8xPqdyoqXzoCc45nRF5brkFpBYMvtciavzD4g==
   dependencies:
-    "@next/eslint-plugin-next" "16.0.3"
+    "@next/eslint-plugin-next" "16.0.4"
     eslint-import-resolver-node "^0.3.6"
     eslint-import-resolver-typescript "^3.5.2"
     eslint-plugin-import "^2.32.0"
