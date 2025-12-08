@@ -3258,17 +3258,17 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@prisma/client-runtime-utils@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@prisma/client-runtime-utils/-/client-runtime-utils-7.0.1.tgz#db5e9e0e48224693e6b89d5d3cd10a1ff1799ba2"
-  integrity sha512-R26BVX9D/iw4toUmZKZf3jniM/9pMGHHdZN5LVP2L7HNiCQKNQQx/9LuMtjepbgRqSqQO3oHN0yzojHLnKTGEw==
+"@prisma/client-runtime-utils@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client-runtime-utils/-/client-runtime-utils-7.1.0.tgz#eb8cbc6641f11de87225c61d12c0cba28e10d3ab"
+  integrity sha512-39xmeBrNTN40FzF34aJMjfX1PowVCqoT3UKUWBBSP3aXV05NRqGBC3x2wCDs96ti6ZgdiVzqnRDHtbzU8X+lPQ==
 
-"@prisma/client@^7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-7.0.1.tgz#a48edb13851b1e496e22c4799383560fa85e662c"
-  integrity sha512-O74T6xcfaGAq5gXwCAvfTLvI6fmC3and2g5yLRMkNjri1K8mSpEgclDNuUWs9xj5AwNEMQ88NeD3asI+sovm1g==
+"@prisma/client@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-7.1.0.tgz#7d0f9257bb06cd570bc3c0ce1966485592c30393"
+  integrity sha512-qf7GPYHmS/xybNiSOpzv9wBo+UwqfL2PeyX+08v+KVHDI0AlSCQIh5bBySkH3alu06NX9wy98JEnckhMHoMFfA==
   dependencies:
-    "@prisma/client-runtime-utils" "7.0.1"
+    "@prisma/client-runtime-utils" "7.1.0"
 
 "@prisma/config@7.1.0":
   version "7.1.0"
