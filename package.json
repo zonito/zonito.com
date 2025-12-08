@@ -42,7 +42,7 @@
     "framer-motion": "^12.23.25",
     "graphql": "^16.12.0",
     "isomorphic-unfetch": "^4.0.2",
-    "jsonwebtoken": "^9.0.2",
+    "jsonwebtoken": "^9.0.3",
     "lodash": "^4.17.21",
     "lru-cache": "^11.2.4",
     "next": "16.0.7",
