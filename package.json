@@ -45,7 +45,7 @@
     "jsonwebtoken": "^9.0.3",
     "lodash": "^4.17.21",
     "lru-cache": "^11.2.4",
-    "next": "16.0.7",
+    "next": "16.0.9",
     "next-seo": "^7.0.1",
     "postmark": "^4.0.5",
     "react": "^19.2.1",
