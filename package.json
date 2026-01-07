@@ -86,7 +86,7 @@
     "@graphql-codegen/cli": "^6.1.0",
     "@graphql-codegen/typescript": "^5.0.4",
     "@graphql-codegen/typescript-operations": "^5.0.7",
-    "@graphql-codegen/typescript-react-apollo": "^4.3.4",
+    "@graphql-codegen/typescript-react-apollo": "^4.4.0",
     "@next/eslint-plugin-next": "^16.1.1",
     "@testing-library/cypress": "^10.1.0",
     "@types/chai": "^5.2.3",
