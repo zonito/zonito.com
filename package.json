@@ -44,7 +44,7 @@
     "isomorphic-unfetch": "^4.0.2",
     "jsonwebtoken": "^9.0.3",
     "lodash": "^4.17.23",
-    "lru-cache": "^11.2.4",
+    "lru-cache": "^11.2.5",
     "next": "16.1.3",
     "next-seo": "^7.0.1",
     "postmark": "^4.0.5",
