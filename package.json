@@ -51,7 +51,7 @@
     "react": "^19.2.4",
     "react-autosize-textarea": "^7.1.0",
     "react-dom": "^19.2.4",
-    "react-dropzone": "^14.4.0",
+    "react-dropzone": "^15.0.0",
     "react-feather": "^2.0.10",
     "react-hot-toast": "^2.6.0",
     "react-linkify": "^1.0.0-alpha",
