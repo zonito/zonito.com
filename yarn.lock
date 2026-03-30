@@ -101,10 +101,10 @@
     immutable "^5.1.5"
     invariant "^2.2.4"
 
-"@auth0/nextjs-auth0@^4.16.0":
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-4.16.0.tgz#3a16448bec859f0cbf0ca34befe42a67d68b1c7b"
-  integrity sha512-QTQdK+/YL68J7b1tSdvJTT16+r+Dxwy/m0kwl73CEy/QsYCpHE1sCZYgQ4UaFZb5jHQ7d4R2JUkHN5k2fKQ4zg==
+"@auth0/nextjs-auth0@^4.16.1":
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-4.16.1.tgz#8ddba575515fd805f26758ebf90e45e90a125bb8"
+  integrity sha512-HWUxjqjzVjn2TtXN64bduXK7ydReqMYHReQ+CLWQzOcLtQA/wxwbtfpFYqBn9Pkz1e/YJOhu28l+OwWjfTtWxQ==
   dependencies:
     "@edge-runtime/cookies" "^5.0.1"
     "@panva/hkdf" "^1.2.1"
