@@ -84,7 +84,7 @@
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@graphql-codegen/add": "^6.0.1",
     "@graphql-codegen/cli": "^6.2.1",
-    "@graphql-codegen/typescript": "^5.0.9",
+    "@graphql-codegen/typescript": "^5.0.10",
     "@graphql-codegen/typescript-operations": "^5.0.9",
     "@graphql-codegen/typescript-react-apollo": "^4.4.1",
     "@next/eslint-plugin-next": "^16.2.3",
