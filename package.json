@@ -80,7 +80,7 @@
   "devDependencies": {
     "@ardatan/graphql-tools": "^4.1.0",
     "@bahmutov/add-typescript-to-cypress": "^2.1.2",
-    "@cypress/webpack-preprocessor": "^7.0.2",
+    "@cypress/webpack-preprocessor": "^7.1.0",
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@graphql-codegen/add": "^6.0.1",
     "@graphql-codegen/cli": "^6.3.0",
